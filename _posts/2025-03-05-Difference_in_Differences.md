@@ -1,7 +1,7 @@
 ---
 published: true
 layout: single
-title:  "한국경제신문 경제논문 공모전 (2)"
+title:  "DID(Difference in Differences, 이중차분법)"
 categories: Activity
 tag: Economics
 toc: true
@@ -13,7 +13,7 @@ ___
 
 
 
-### DID(Difference in Differences, 이중차분법)
+## DID(Difference in Differences, 이중차분법)
 
 
 
@@ -81,13 +81,9 @@ ___
 
 그림에서와 같이 분석을 위해 4개의 집단을 나누어 비교할 수 있습니다.
 
-첫번째 집단 : 정책 전 처리 집단
+첫번째 집단 : 정책 전 처리 집단 , 두번째 집단 : 정책 후 처리 집단
 
-두번째 집단 : 정책 후 처리 집단
-
-세번째 집단 : 정책 전 통제 집단
-
-네번째 집단 : 정책 후 통제 집단
+세번째 집단 : 정책 전 통제 집단 , 네번째 집단 : 정책 후 통제 집단
 
 
 
@@ -112,5 +108,7 @@ ___
 ##### 참고 자료
 
 1. 서울시립대학교 최승문 교수님 고급계량연습 Chapter 13의 Lecture Note
-2. https://www.publichealth.columbia.edu/research/population-health-methods/difference-difference-estimation
+
+2. []: https://www.publichealth.columbia.edu/research/population-health-methods/difference-difference-estimation
+
 3. 
