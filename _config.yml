@@ -19,7 +19,7 @@ locale                   : "ko-KR"
 rtl                      : # true, false (default) # turns direction of the page into right to left for RTL languages
 title                    : "KSE128"
 title_separator          : "|"
-subtitle                 : "기록중..."
+subtitle                 : "슬기로운 사학년 라잎"
 name                     : "김상은"
 description              : ":)"
 url                      : "https://KSE128.github.io"
