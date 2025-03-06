@@ -112,7 +112,7 @@ $$
 y \ =\ \beta_0+ \delta_0 d2\ +\ \beta_1dT +\ \delta_1d2·dT \ +\ other\ factors+\ u \\
 y: \ the \ outcome \ variable \ of \ interest \\
 dT : treatment \ group\ = \ 1 \ ,\ control \ group \ =\ 0 \\
-d2 : second\ time\ period \ = \ 1 \ ,\ first\ time \ period \ =\ 0
+d2 : second\ time\ period \ = \ 1 \ ,\ first\ time \ period \ =\ 0 \\
 $$
 
 
