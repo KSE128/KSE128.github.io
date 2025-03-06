@@ -2,8 +2,8 @@
 published: true
 layout: single
 title:  "DID(Difference in Differences, 이중차분법)"
-categories: Activity
-tag: Economics
+categories: Economics
+tag: Activity
 toc: true
 ---
 
@@ -106,6 +106,13 @@ ___
    **정책의 효과가 존재한다면**, 처리 집단의 변화는 통제 집단과 다르게 나타납니다. 그림의 빨간 실선에서 볼 수 있듯이 처리 집단의 결과값은 통제 집단보다 더 크게 증가하게 됩니다. 추가적인 증가분을 **정책 효과(intervention effect)**라고 합니다.
 
 
+
+#### DID 모형
+
+$$
+y \ =\ \beta_0+ \delta_0 d2\ +\ \beta_1dT +\ \delta_1d2·dT \ +\ other\ factors+\ u \\
+y\:\
+$$
 
 
 
