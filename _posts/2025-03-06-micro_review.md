@@ -1,3 +1,23 @@
+---
+published: true
+layout: single
+title:  "미시경제학 복습"
+categories: Industrial
+tag: Micro
+toc: true
+math: true
+---
+
+---
+
+---
+
+이 포스팅은 산업조직론 수업 중 미시경제학 복습 내용입니다.
+
+---
+
+
+
 # 미시경제학 복습 (25/03/05)
 
 ### 수요(Demand)
@@ -59,7 +79,6 @@ $$
 D(p) \\ dependent \ variable : \ Quantity \\ independent \ variable :\ Price
 $$
 
-
 **역수요함수**
 $$
 P(Q) \\ dependent \ variable : \ Price \\ independent \ variable :\ Quantity
@@ -78,7 +97,7 @@ $$
 
 가격의 1% 변화에 따른 수요량의 % 변화
 $$
-\epsilon \ = -{{dq}\over{dp}}{{p}\over{q}} \ \approx \ -{\Delta q\over{\Delta p}}{{p}\over{q}} \ \Rightarrow \ {\%\ \Delta\ in \ Q\over \%\ \Delta\ in \ P}
+\epsilon \ = -\frac{dq}{dp}\frac{p}{q} \ \approx \ -\frac{\Delta q}{\Delta p}\frac{p}{q} \ \Rightarrow \ \frac{\%\ \Delta\ in \ Q}{\%\ \Delta\ in \ P}
 $$
 
 
@@ -88,7 +107,7 @@ $$
 
 선형으로 이루어진 수요곡선의 경우 **기울기(dp/dq)가 일정**하다.
 $$
-\epsilon \ = -{{dq}\over{dp}}{{p}\over{q}} \ \approx \ -{\Delta q\over{\Delta p}}{{p}\over{q}} \\ -{\Delta q\over{\Delta p}} : reciprocal\ of \ slope \\ {{p}\over{q}} : change \ depending \ on \ location
+\epsilon \ = -\frac{dq}{dp}\frac{p}{q} \ \approx \ -\frac{\Delta q}{\Delta p}\frac{p}{q} \\ -{\Delta q\over{\Delta p}} : reciprocal\ of \ slope \\ {{p}\over{q}} : change \ depending \ on \ location
 $$
 선형으로 이루어진 그래프의 경우, 기울기가 일정하기 때문에 **p/q**가 수요의 가격 탄력성을 결정하게 된다.
 
