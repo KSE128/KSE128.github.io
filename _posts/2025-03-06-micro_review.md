@@ -10,8 +10,6 @@ math: true
 
 ---
 
----
-
 이 포스팅은 산업조직론 수업 중 미시경제학 복습 내용입니다.
 
 ---
@@ -74,14 +72,16 @@ ex)
 
 <img src="C:\Users\김충남\Desktop\2025-1\kse128-github-blog\KSE128.github.io\images\2025-03-06-micro_review\demand_curve-1741256052425-3.png" alt="demand_curve" style="zoom: 67%;" />
 
-
 $$
-D(p) \\ dependent \ variable : \ Quantity \\ independent \ variable :\ Price
+D(p) \\
+\text{dependent variable : Quantity} \\
+\text{independent variable : Price}
 $$
-
 **역수요함수**
 $$
-P(Q) \\ dependent \ variable : \ Price \\ independent \ variable :\ Quantity
+P(Q) \\
+\text{dependent variable : Price} \\
+\text{independent variable : Quantity}
 $$
 역수요함수를 이용하여 문제를 해결하는 경우도 있다!
 
@@ -97,7 +97,7 @@ $$
 
 가격의 1% 변화에 따른 수요량의 % 변화
 $$
-\epsilon \ = -\frac{dq}{dp}\frac{p}{q} \ \approx \ -\frac{\Delta q}{\Delta p}\frac{p}{q} \ \Rightarrow \ \frac{\%\ \Delta\ in \ Q}{\%\ \Delta\ in \ P}
+\epsilon = -\frac{dq}{dp}\frac{p}{q} \approx -\frac{\Delta q}{\Delta p}\frac{p}{q} \Rightarrow \frac{\%\ \Delta \text{ in } Q}{\%\ \Delta \text{ in } P}
 $$
 
 
@@ -107,7 +107,9 @@ $$
 
 선형으로 이루어진 수요곡선의 경우 **기울기(dp/dq)가 일정**하다.
 $$
-\epsilon \ = -\frac{dq}{dp}\frac{p}{q} \ \approx \ -\frac{\Delta q}{\Delta p}\frac{p}{q} \\ -{\Delta q\over{\Delta p}} : reciprocal\ of \ slope \\ {{p}\over{q}} : change \ depending \ on \ location
+\epsilon = -\frac{dq}{dp}\frac{p}{q} \approx -\frac{\Delta q}{\Delta p}\frac{p}{q} \\
+-\frac{\Delta q}{\Delta p} : \text{reciprocal of slope} \\
+\frac{p}{q} : \text{change depending on location}
 $$
 선형으로 이루어진 그래프의 경우, 기울기가 일정하기 때문에 **p/q**가 수요의 가격 탄력성을 결정하게 된다.
 

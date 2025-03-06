@@ -110,12 +110,11 @@ ___
 
 DID를 간단한 회귀식으로 나타내면 다음과 같습니다.
 $$
-y \ =\ \beta_0+ \delta_0 d2\ +\ \beta_1dT +\ \delta_1d2·dT \ +\ other\ factors+\ u \\
-y: \ the \ outcome \ variable \ of \ interest \\
-dT : treatment \ group\ = \ 1 \ ,\ control \ group \ =\ 0 \\
-d2 : second\ time\ period \ = \ 1 \ ,\ first\ time \ period \ =\ 0 \\
+y = \beta_0 + \delta_0 d2 + \beta_1 dT + \delta_1 d2 \cdot dT + \text{other factors} + u \\
+y : \text{the outcome variable of interest} \\
+dT : \text{treatment group} = 1 \ ,\ \text{control group} = 0 \\
+d2 : \text{second time period} = 1 \ ,\ \text{first time period} = 0
 $$
-
 
 
 
