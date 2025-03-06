@@ -5,6 +5,7 @@ title:  "DID(Difference in Differences, 이중차분법)"
 categories: Economics
 tag: Activity
 toc: true
+math: true
 ---
 
 이 포스팅은 DID(Difference in Differences, 이중차분법)에 대한 내용을 담고 있습니다.
