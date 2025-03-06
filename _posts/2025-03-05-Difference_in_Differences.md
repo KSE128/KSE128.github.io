@@ -7,7 +7,7 @@ tag: Economics
 toc: true
 ---
 
-이 포스팅은 한국경제신문 경제논문 공모전에 대한 두번째 사전 준비 기록입니다.
+이 포스팅은 DID(Difference in Differences, 이중차분법)에 대한 내용을 담고 있습니다.
 
 ___
 
@@ -79,31 +79,31 @@ ___
 
 (intervention group : 처리집단, comparison group : 통제집단)
 
----
-
-
-
-그림에서와 같이 분석을 위해 4개의 집단을 나누어 비교할 수 있습니다.
+분석을 위해 4개의 집단으로 나누어 비교할 수 있습니다.
 
 첫번째 집단 : 정책 전 처리 집단 , 두번째 집단 : 정책 후 처리 집단                    (빨간 선)
 
 세번째 집단 : 정책 전 통제 집단 , 네번째 집단 : 정책 후 통제 집단                    (초록 선)
 
-
-
-(1) 정책 전 (Pre-intervention)
-
-정책 시행 전에는 처리 집단과 통제 집단은 서로 **상수 차이(Constant difference)**를 가지게 됩니다.
-
-이 상수 차이는 두 집단 사이의 구조적인 차이에서 비롯된 것으로, 이는 시간에 따라 일정하게 유지된다고 가정합니다. (**Parallel Trend Assumption** 가정)
+---
 
 
 
-(2) 정책 후 (Post-intervention)
+1. 정책 전 (Pre-intervention)
 
-정책이 시행된 이후, 처리 집단과 통제 집단의 결과값 변화 추세를 비교했을 때, 정책의 효과가 없다면 처리 집단의 변화 추세는 통제 집단과 동일할 것입니다. 이는 상수 차이가 유지됨을 알 수 있습니다. 그림의 빨간 점선을 통해 알 수 있습니다.
+   정책 시행 전에는 처리 집단과 통제 집단은 서로 **상수 차이(Constant difference)**를 가지게 됩니다. 이 차이는 두 집단 사이의 구조적인 차이에서 비롯된 것으로, 이는 시간에 따라 일정하게 유지된다고 가정합니다. **(Parallel Trend Assumption)**
 
-실제로 정책이 영향을 미쳤다면, 처리 집단의 변화는 통제 집단과 다르게 나타납니다. 그림의 빨간 실선에서 볼 수 있듯이 처리 집단의 결과값은 통제 집단보다 더 크게 증가하게 됩니다. 추가적인 증가분을 **정책 효과(intervention effect)**라고 합니다.
+
+
+2. 정책 후 (Post-intervention)
+
+   정책이 시행된 이후, 처리 집단과 통제 집단의 결과값 변화 추세를 비교했을 때, 
+
+   **정책의 효과가 없다면** 처리 집단의 변화 추세는 통제 집단과 동일할 것입니다. 이는 상수 차이가 유지됨을 알 수 있습니다. 그림의 빨간 점선을 통해 알 수 있습니다.
+
+   
+
+   **정책의 효과가 존재한다면**, 처리 집단의 변화는 통제 집단과 다르게 나타납니다. 그림의 빨간 실선에서 볼 수 있듯이 처리 집단의 결과값은 통제 집단보다 더 크게 증가하게 됩니다. 추가적인 증가분을 **정책 효과(intervention effect)**라고 합니다.
 
 
 
@@ -114,7 +114,4 @@ ___
 #### 참고 자료
 
 1. 서울시립대학교 최승문 교수님 고급계량연습 Chapter 13의 Lecture Note
-
-2. [https://www.publichealth.columbia.edu/research/population-health-methods/difference-difference-estimation]: https://www.publichealth.columbia.edu/research/population-health-methods/difference-difference-estimation
-
-3. 
+3. <https://www.publichealth.columbia.edu/research/population-health-methods/difference-difference-estimation>
