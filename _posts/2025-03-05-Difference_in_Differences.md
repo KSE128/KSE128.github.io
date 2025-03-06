@@ -114,4 +114,5 @@ ___
 #### 참고 자료
 
 1. 서울시립대학교 최승문 교수님 고급계량연습 Chapter 13의 Lecture Note
-3. [Difference-in-Difference Estimation - Columbia Public Health](https://www.publichealth.columbia.edu/research/population-health-methods/difference-difference-estimation)
+2. <https://www.publichealth.columbia.edu/research/population-health-methods/difference-difference-estimation>
+3. 
