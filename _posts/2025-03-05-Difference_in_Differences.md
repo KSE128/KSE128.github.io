@@ -59,9 +59,7 @@ ___
 
    1. 정책이 어떤 집단에 적용될 때, 그 집단의 결과 변수는 정책 개입 전에 영향을 받은 상태면 안됩니다.
 
-   2. 정책 개입 전에는, 처리 집단과 통제 집단의 결과 변수는 변화 추세가 비슷해야합니다. 
-
-      **(Parallel Trend Assumption)**
+   2. 정책 개입 전에는, 처리 집단과 통제 집단의 결과 변수는 변화 추세가 비슷해야합니다. **(Parallel Trend Assumption)**
 
 
 
@@ -109,11 +107,13 @@ ___
 
 #### DID 모형
 
+DID를 간단한 회귀식으로 나타내면 다음과 같습니다.
 $$
 y \ =\ \beta_0+ \delta_0 d2\ +\ \beta_1dT +\ \delta_1d2·dT \ +\ other\ factors+\ u \\
-y\:\
+y: \ the \ outcome \ variable \ of \ interest \\
+dT : treatment \ group\ = \ 1 \ ,\ control \ group \ =\ 0 \\
+d2 : second\ time\ period \ = \ 1 \ ,\ first\ time \ period \ =\ 0
 $$
-
 
 
 
