@@ -60,7 +60,8 @@ ___
 
    1. 정책이 어떤 집단에 적용될 때, 그 집단의 결과 변수는 정책 개입 전에 영향을 받은 상태면 안됩니다.
 
-   2. 정책 개입 전에는, 처리 집단과 통제 집단의 결과 변수는 변화 추세가 비슷해야합니다. **(Parallel Trend Assumption)**
+   2. 정책 개입 전에는, 처리 집단과 통제 집단의 결과 변수는 변화 추세가 비슷해야합니다. 
+      **(Parallel Trend Assumption)**
 
 
 
@@ -72,7 +73,7 @@ ___
 
 ---
 
-![didgraph](C:\Users\김충남\Desktop\2025-1\kse128-github-blog\KSE128.github.io\images\2025-03-05-second\didgraph-1741174328864-2.png)
+![didgraph](C:\Users\김충남\Desktop\2025-1\kse128-github-blog\KSE128.github.io\images\2025-03-05-Difference_in_Differences\didgraph.png)
 
 (Pre-intervention : 정책 전, Post-intervention : 정책 후)
 
@@ -111,10 +112,49 @@ ___
 DID를 간단한 회귀식으로 나타내면 다음과 같습니다.
 $$
 y = \beta_0 + \delta_0 d2 + \beta_1 dT + \delta_1 d2 \cdot dT + \text{other factors} + u \\
+$$
+
+$$
 y : \text{the outcome variable of interest} \\
 dT : \text{treatment group} = 1 \ ,\ \text{control group} = 0 \\
-d2 : \text{second time period} = 1 \ ,\ \text{first time period} = 0
+d2 : \text{second time period} = 1 \ ,\ \text{first time period} = 0 \\
+\delta_1 : \text{average treatment effect (policy effect)} \\
+\text{other factors} : \text{except of the policy effect}
 $$
+
+
+
+여기서 처리 집단의 유무와 정책 변화 전후는 더미변수로 처리하게 됩니다. 
+
+
+
+우리가 관심 가져야할 계수는 d2와 dT의 상호작용항입니다. 
+
+이 추정량이 DID 모형의 핵심이라고 할 수 있습니다.
+
+
+$$
+\hat{\delta_1} = (\bar{y}_{2,T} \ - \bar{y}_{2,C}) \ - \ (\bar{y}_{1,T} \ - \bar{y}_{1,C}) \\
+\ \ \ \ =(\bar{y}_{2,T} \ - \bar{y}_{1,T}) \ - \ (\bar{y}_{2,C} \ - \bar{y}_{1,C}) \\
+$$
+
+$$
+C : \text{control group}   \\
+T : \text{treatment group} \\
+1 : \text{before policy changes} \\
+2 : \text{after policy changes} \\
+\hat{\delta_1} = \text{difference-in-differences estimator} \\
+$$
+
+DID의 추정량은 처리 집단의 특정 정책 발생 이후와 이전의 결과 변수 평균값의 차이에서 통제 집단의 특정 정책 발생 이후와 이전의 결과 변수 평균값의 차이를 빼면서 특정 정책의 효과를 추정할 수 있게 됩니다.
+
+
+
+아래의 표는 4개의 집단 간 결과의 차이를 나타내고 있습니다.
+
+![did sum](C:\Users\김충남\Desktop\2025-1\kse128-github-blog\KSE128.github.io\images\2025-03-05-Difference_in_Differences\did sum.PNG)
+
+
 
 
 

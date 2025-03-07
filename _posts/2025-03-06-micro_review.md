@@ -8,8 +8,6 @@ toc: true
 math: true
 ---
 
----
-
 이 포스팅은 산업조직론 수업 중 미시경제학 복습 내용입니다.
 
 ---
@@ -71,7 +69,6 @@ ex)
 우하향의 형태를 띈다.
 
 <img src="C:\Users\김충남\Desktop\2025-1\kse128-github-blog\KSE128.github.io\images\2025-03-06-micro_review\demand_curve-1741256052425-3.png" alt="demand_curve" style="zoom: 67%;" />
-
 $$
 D(p) \\
 \text{dependent variable : Quantity} \\
@@ -105,13 +102,15 @@ $$
 
 ![price_elasticity](C:\Users\김충남\Desktop\2025-1\kse128-github-blog\KSE128.github.io\images\2025-03-06-micro_review\price_elasticity.png)
 
-선형으로 이루어진 수요곡선의 경우 **기울기(dp/dq)가 일정**하다.
+선형으로 이루어진 수요곡선의 경우 기울기가 일정하다.
 $$
 \epsilon = -\frac{dq}{dp}\frac{p}{q} \approx -\frac{\Delta q}{\Delta p}\frac{p}{q} \\
 -\frac{\Delta q}{\Delta p} : \text{reciprocal of slope} \\
 \frac{p}{q} : \text{change depending on location}
 $$
 선형으로 이루어진 그래프의 경우, 기울기가 일정하기 때문에 **p/q**가 수요의 가격 탄력성을 결정하게 된다.
+
+
 
 A영역으로 갈수록 **p/q**가 커지고, B영역으로 갈수록 **p/q**가 작아진다.
 
