@@ -152,7 +152,7 @@ DID의 추정량은 처리 집단의 특정 정책 발생 이후와 이전의 �
 
 아래의 표는 4개의 집단 간 결과의 차이를 나타내고 있습니다.
 
-![did sum](C:\Users\김충남\Desktop\2025-1\kse128-github-blog\KSE128.github.io\images\2025-03-05-Difference_in_Differences\did sum.PNG)
+![did sum]({{site.url}}\images\2025-03-05-Difference_in_Differences\did sum.PNG)
 
 
 
