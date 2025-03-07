@@ -34,9 +34,9 @@ math: true
 
 그래프에서 소비자 잉여를 찾을 수 있는 방법은 소비자의 수요곡선과 시장가격 사이의 면적을 찾으면 된다.
 
-ex)
+예시
 
-![individual_demand_curve](C:\Users\김충남\Desktop\2025-1\kse128-github-blog\KSE128.github.io\images\2025-03-06-micro_review\individual_demand_curve.png)
+![individual_demand_curve]({{site.url}}\images\2025-03-06-micro_review\individual_demand_curve.png)
 
 이 그래프의 경우 소비자 1명의 수요 곡선을 그린 것이다.
 
@@ -68,7 +68,7 @@ ex)
 
 우하향의 형태를 띈다.
 
-<img src="C:\Users\김충남\Desktop\2025-1\kse128-github-blog\KSE128.github.io\images\2025-03-06-micro_review\demand_curve-1741256052425-3.png" alt="demand_curve" style="zoom: 67%;" />
+<img src="{{site.url}}\images\2025-03-06-micro_review\demand_curve-1741256052425-3.png" alt="demand_curve" style="zoom: 67%;" />
 $$
 D(p) \\
 \text{dependent variable : Quantity} \\
@@ -100,7 +100,7 @@ $$
 
 수요의 가격탄력성은 항상 (-)의 값을 가진다.
 
-![price_elasticity](C:\Users\김충남\Desktop\2025-1\kse128-github-blog\KSE128.github.io\images\2025-03-06-micro_review\price_elasticity.png)
+![price_elasticity]({{site.url}}\images\2025-03-06-micro_review\price_elasticity.png)
 
 선형으로 이루어진 수요곡선의 경우 기울기가 일정하다.
 $$
@@ -123,7 +123,7 @@ A영역으로 갈수록 **p/q**가 커지고, B영역으로 갈수록 **p/q**가
 1. 고정비용 (Fixed Cost, FC) : 산출물 수준에 영향받지 않는다. 즉, 생산량의 변화와 상관 없이 고정으로 발생하는 비용. 단기에는 고정비용이나, 장기에는 가변비용
 2. 가변비용 (Variable Cost, VC) : 산출물 수준에 영향을 받는 비용 (인건비, 구입비 등)
 3. 총비용 (Total Cost, TC) : 고정비용과 가변비용의 합, 주로 단기 총비용이라고 한다.
-4. 평균비용 (
+4. 평균비용 
 
 - 평균총비용, 평균가변비용, 평균고정비용
 
