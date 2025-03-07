@@ -73,7 +73,7 @@ ___
 
 ---
 
-![didgraph](C:\Users\김충남\Desktop\2025-1\kse128-github-blog\KSE128.github.io\images\2025-03-05-Difference_in_Differences\didgraph.png)
+![didgraph]({{site.url}}\images\2025-03-05-Difference_in_Differences\didgraph.png)
 
 (Pre-intervention : 정책 전, Post-intervention : 정책 후)
 
