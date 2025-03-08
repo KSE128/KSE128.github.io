@@ -1,7 +1,7 @@
 ---
 published: true
 layout: single
-title:  "미시경제학 복습"
+title:  "미시경제학 복습(25/03/05)"
 categories: Industrial
 tag: Micro
 toc: true
@@ -14,7 +14,7 @@ math: true
 
 
 
-# 미시경제학 복습 (25/03/05)
+# 미시경제학 복습 
 
 ### 수요(Demand)
 
@@ -123,8 +123,12 @@ A영역으로 갈수록 **p/q**가 커지고, B영역으로 갈수록 **p/q**가
 1. 고정비용 (Fixed Cost, FC) : 산출물 수준에 영향받지 않는다. 즉, 생산량의 변화와 상관 없이 고정으로 발생하는 비용. 단기에는 고정비용이나, 장기에는 가변비용
 2. 가변비용 (Variable Cost, VC) : 산출물 수준에 영향을 받는 비용 (인건비, 구입비 등)
 3. 총비용 (Total Cost, TC) : 고정비용과 가변비용의 합, 주로 단기 총비용이라고 한다.
-4. 평균비용 
+4. 평균비용 (Average Cost, AC) : 비용 / 산출물 ( C/Q )
+   - 평균총비용(ATC), 평균가변비용(AVC), 평균고정비용(AFC)
+5. 한계비용 (Marginal Cost, MC) : 산출물 1단위를 추가적으로 생산하기 위하여 필요한 비용
+   - 한계고정비용(MFC) = 0  : 생산량이 아무리 늘어나도 고정비용은 항상 같다.
+   - 한계총비용(MTC) = 한계가변비용(MVC)
 
-- 평균총비용, 평균가변비용, 평균고정비용
 
-1. 한계비용 :
+
+![cost_curves]({{site.url}}\2025-03-06-micro_review\cost_curves.png)
