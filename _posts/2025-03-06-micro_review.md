@@ -131,4 +131,4 @@ A영역으로 갈수록 **p/q**가 커지고, B영역으로 갈수록 **p/q**가
 
 
 
-![cost_curves]({{site.url}}\2025-03-06-micro_review\cost_curves.png)
+![cost_curves]({{site.url}}images\2025-03-06-micro_review\cost_curves.png)
