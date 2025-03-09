@@ -17,7 +17,7 @@ minimal_mistakes_skin    : "contrast" # "air", "aqua", "contrast", "dark", "dirt
 # Site Settings
 locale                   : "ko-KR"
 rtl                      : # true, false (default) # turns direction of the page into right to left for RTL languages
-title                    : "KSE128"
+title                    : "sang_eunni"
 title_separator          : "|"
 subtitle                 : "슬기로운 사학년 라잎"
 name                     : "김상은"
@@ -115,7 +115,7 @@ analytics:
 author:
   name             : "김상은"
   avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "서울시립대학교 경제학부 학생입니다."
+  bio              : #""
   location         : "서울시립대학교"
   email            :
   links:
