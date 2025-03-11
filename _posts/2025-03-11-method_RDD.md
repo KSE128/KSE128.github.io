@@ -16,7 +16,7 @@ use_math: true
 
 
 
-### RDD (Resilient Distributed DataSet, 탄력적 분산 데이터셋)
+### RDD (Resilient Distributed DataSet)
 
 #### Introduction
 
@@ -76,9 +76,9 @@ RDD는 Apache Spark의 핵심 개념으로, 탄력적(Resilient), 분산(Distrib
 
 ---
 
-##### Transformations (변환 연산)
+##### Transformations 
 
-기존 RDD에서 새로운 RDD를 생성하는 연산 (**Lazy Evaluation** 방식)
+변환 연산 : 기존 RDD에서 새로운 RDD를 생성하는 연산 (**Lazy Evaluation** 방식)
 
 Lazy Evaluation(지연 평가)은 실제 연산을 즉시 수행하지 않고, 실행이 필요할 때까지 연산을 지연시키는 방식입니다.
 
@@ -96,9 +96,9 @@ Lazy Evaluation(지연 평가)은 실제 연산을 즉시 수행하지 않고, �
 
 
 
-##### Actions (행동 연산)
+##### Actions 
 
-RDD에서 최종 결과를 반환하는 연산 (**즉시 실행**)
+행동 연산 : RDD에서 최종 결과를 반환하는 연산 (**즉시 실행**)
 
 **대표적인 행동 연산**
 
@@ -129,7 +129,7 @@ Spark는 기본적으로 **Hash Partition(해시 파티셔닝)**과 **Range Part
 
 
 
-##### Hash Partition (해시 파티셔닝)
+##### Hash Partition 
 
 데이터를 해시 함수(Hash function)를 사용하여 특정 파티션에 배정하는 방식입니다. 같은 키를 가진 데이터는 항상 동일한 파티션으로 보내집니다. 키를 기준으로 그룹화(Groupby) 또는 조인(Join) 연산이 효율적입니다. 랜덤한 분배에 가까우며, 키의 개수가 많고 균등하게 분포되어 있을 때 효율적입니다. 그러나, 해시 충돌의 가능성이 있습니다. 일부 파티션에 데이터가 몰릴 수 있습니다. 또, 정렬이 필요할 경우 비효율적입니다.
 
@@ -137,7 +137,7 @@ Spark는 기본적으로 **Hash Partition(해시 파티셔닝)**과 **Range Part
 
 
 
-##### Range Partition (범위 파티셔닝)
+##### Range Partition
 
 데이터를 일정한 범위(Range) 단위로 나누어 파티션을 생성하는 방식입니다. 데이터의 정렬이 필요한 경우 적합하며, 값의 범위에 따라 정렬된 상태로 배분됩니다. 연속적인 키 값을 가진 데이터에서 성능이 우수합니다. 데이터가 정렬된 상태로 유지되어 범위 검색이 빠릅니다. 또, 비슷한 범위의 데이터가 같은 파티션에 위치하므로, 특정 범위 분석에 효과적입니다. 그러나, 데이터가 불균형하게 분포할 경우 특정 파티션에 데이터가 몰릴 가능성이 있습니다. 범위 기준을 미리 정해야 하므로, 데이터 분포를 미리 알고 있어야합니다.
 
@@ -156,6 +156,20 @@ Spark는 기본적으로 **Hash Partition(해시 파티셔닝)**과 **Range Part
 | 반복 연산 최적화 | Checkpoint, Caching 지원          | 반복 연산 시 비효율적           |
 
 위의 비교를 통해 RDD는 MapReduce보다 훨씬 빠르고 효율적인 연산이 가능하며, 반복 연산이 필요한 머신러닝과 데이터 분석에서 강력한 성능을 발휘한다는 것을 알 수 있습니다.
+
+
+
+#### Examples of experiments
+
+---
+
+To be continued
+
+
+
+#### Conclusion
+
+
 
 
 
