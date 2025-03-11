@@ -1,7 +1,7 @@
 ---
 published: true
 layout: single
-title:  "Elastic distributed dataset RDD (Resilient Distributed Datasets)"
+title:  "RDD(Resilient Distributed DataSet)"
 categories: Economics
 tag: Activity
 toc: true
