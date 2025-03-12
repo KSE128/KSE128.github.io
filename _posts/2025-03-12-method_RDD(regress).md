@@ -8,11 +8,11 @@ toc: true
 use_math: true
 ---
 
-이 포스팅은 응용미시경제학 논문 작성 시 필요한 연구방법론 중 하나인 **RDD(Regression Discontinuity Design)**에 대한 내용을 담고 있습니다.
+이 포스팅은 **RDD(Regression Discontinuity Design)**에 대한 내용을 담고 있습니다.
 
 ---
 
-### RDD (Regression Discontinuity Design)
+### RDD (Regression Discontinuity Design, 회귀 불연속 설계)
 
 #### Introduction
 
