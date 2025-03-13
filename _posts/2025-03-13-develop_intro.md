@@ -14,9 +14,15 @@ use_math: true
 
 ---
 
-### Introduction
+### Introduction of Development Economics
+
+
 
 #### Intro to this course
+
+---
+
+
 
 ##### What is Development Economics?
 
@@ -32,6 +38,8 @@ use_math: true
 
 #### Variations in income around the world
 
+---
+
 ##### Question in Development Economics
 
 Why are some countries poor and some not poor?  (왜 어떤 나라는 가난하고, 어떤 나라는 부유할까?)
@@ -46,9 +54,9 @@ World Bank에서는 세계 소득에 따라 3가지로 나눕니다.
 - Middle Income Country (중소득 국가)
 - Low Income Country (저소득 국가)
 
-<img src="C:\Users\김충남\Desktop\2025-1\kse128-github-blog\KSE128.github.io\images\2025-03-13-develop_intro\income_worldbank.PNG" alt="income_worldbank" style="zoom:50%;" />
 
 
+<img src="{{site.url}}\images\2025-03-13-develop_intro\income_worldbank.PNG" alt="income_worldbank" style="zoom:67%;" />
 
 World Bank가 나눈 기준에 따라 국가가 색깔로 표현되는 것을 볼 수 있습니다. 저소득 국가일수록 빨간색에 가깝고, 고소득 국가일수록 파란색에 가깝습니다.
 
@@ -68,7 +76,7 @@ UN category에서는 World Bank와 다르게 최빈개발국을 제시했습니�
 
 
 
-<img src="C:\Users\김충남\Desktop\2025-1\kse128-github-blog\KSE128.github.io\images\2025-03-13-develop_intro\income_worldbank.PNG" alt="income_worldbank" style="zoom:66%;" />
+<img src="{{site.url}}\images\2025-03-13-develop_intro\income_worldbank.PNG" alt="income_worldbank" style="zoom:66%;" />
 
 국제 무역 의존도가 높은 경제 개발에 있어서 내륙 국가들은 불리한 위치에 있습니다. LDCs의 내륙 국가들의 존재는 우연의 일치가 아니라는 것을 알 수 있습니다.
 
@@ -78,7 +86,7 @@ World Bank에서 제시한 Country Income Groups 지도에 따르면, 1인당 GD
 
 
 
-<img src="C:\Users\김충남\Desktop\2025-1\kse128-github-blog\KSE128.github.io\images\2025-03-13-develop_intro\river.PNG" alt="river" style="zoom:66%;" />
+<img src="{{site.url}}\images\2025-03-13-develop_intro\river.PNG" alt="river" style="zoom:66%;" />
 
 대륙의 해안을 따라 큰 도시의 비중이 높습니다. 대륙 내부의 큰 도시는 대부분 주요 강을 따라 있습니다.
 
@@ -86,7 +94,7 @@ World Bank에서 제시한 Country Income Groups 지도에 따르면, 1인당 GD
 
 아래의 지도에서는 석유 매장량에 비례하여 각 국가의 크기가 그려집니다. 아프리카의 경우, 석유가 있는 곳이 몇 군데 없기 때문에 지도에 거의 나타나지 않습니다. 
 
-<img src="C:\Users\김충남\Desktop\2025-1\kse128-github-blog\KSE128.github.io\images\2025-03-13-develop_intro\oil.PNG" alt="oil" style="zoom:66%;" />
+<img src="{{site.url}}\images\2025-03-13-develop_intro\oil.PNG" alt="oil" style="zoom:66%;" />
 
 
 
@@ -96,7 +104,7 @@ World Bank에서 제시한 Country Income Groups 지도에 따르면, 1인당 GD
 
 **Fertility (출산율)**
 
-<img src="C:\Users\김충남\Desktop\2025-1\kse128-github-blog\KSE128.github.io\images\2025-03-13-develop_intro\fertiltiy.PNG" alt="fertiltiy" style="zoom:66%;" />
+<img src="{{site.url}}\images\2025-03-13-develop_intro\fertiltiy.PNG" alt="fertiltiy" style="zoom:66%;" />
 
 - 위 지도에서는 전 세계의 **Total Fertility Rate(TFR, 총출산율)**에 대해 극심한 차이를 보여주고 있습니다. 고소득 국가의 경우, TFR이 2 이하로, 장기적으로는 인구 감소의 가능성이 존재합니다. 우리나라와 유럽의 국가에서도 TFR이 작은 것을 확인할 수 있습니다.
 - 그러나, 저소득 국가의 경우, TFR은 여전히 4 이상, 특히 아프리카 열대 국가에서는 TFR이 6 이상으로 매우 높습니다. 이는 국가 별로 문화적 요인에서 출생률에 큰 영향이 있는 것으로 예상됩니다.
@@ -107,7 +115,7 @@ World Bank에서 제시한 Country Income Groups 지도에 따르면, 1인당 GD
 
 - 일부 사회는 극심한 빈곤 속에도 교육과 문해력 향상에 정부와 가계가 많은 노력을 기울였습니다. 우리나라도 그런 국가 중 하나입니다.
 
-![educate](C:\Users\김충남\Desktop\2025-1\kse128-github-blog\KSE128.github.io\images\2025-03-13-develop_intro\educate.png)
+![educate](C{{site.url}}\images\2025-03-13-develop_intro\educate.png)
 
 - 동아시아 지역 국가들이 교육 성취도에서는 문화적으로 교육을 중시하는 경향이 있습니다. 위의 그래프에서는 이러한 경향을 볼 수 있습니다.
 
@@ -130,7 +138,7 @@ World Bank에서 제시한 Country Income Groups 지도에 따르면, 1인당 GD
 
 **Corruption and Economic Development**
 
-<img src="C:\Users\김충남\Desktop\2025-1\kse128-github-blog\KSE128.github.io\images\2025-03-13-develop_intro\Corruption Perception Index.PNG" alt="Corruption Perception Index" style="zoom: 67%;" />
+<img src="{{site.url}}\images\2025-03-13-develop_intro\Corruption Perception Index.PNG" alt="Corruption Perception Index" style="zoom: 67%;" />
 
 국제투명성기구(Transparency International)의 **‘부패인식지수(Corruption Perceptions Index)’**는 공공 부문 부패 수준을 평가합니다. 전문가 의견을 바탕으로 전 세계 국가 및 지역의 공공 부문 부패 수준을 측정합니다. 캐나다와 북유럽 국가들은 가장 청렴한 국가로 평가되며, 빨간색으로 표시된 국가는 부패 수준이 높은 것으로 간주됩니다.
 
@@ -138,7 +146,7 @@ World Bank에서 제시한 Country Income Groups 지도에 따르면, 1인당 GD
 
 **Welfare Spending and Poverty**
 
-<img src="C:\Users\김충남\Desktop\2025-1\kse128-github-blog\KSE128.github.io\images\2025-03-13-develop_intro\PSE.PNG" alt="PSE" style="zoom:50%;" />
+<img src="{{site.url}}\images\2025-03-13-develop_intro\PSE.PNG" alt="PSE" style="zoom:50%;" />
 
 - 북유럽 국가들의 투자 수준이 높은 것에 비해 미국, 일본, 아일랜드와 같은 국가들은 저소득 가정과 아동에 대한 공공 지원이 매우 낮은 편입니다.
 
@@ -146,7 +154,7 @@ World Bank에서 제시한 Country Income Groups 지도에 따르면, 1인당 GD
 
 
 
-<img src="C:\Users\김충남\Desktop\2025-1\kse128-github-blog\KSE128.github.io\images\2025-03-13-develop_intro\corrleation.PNG" alt="corrleation" style="zoom: 50%;" />
+<img src="{{site.url}}\images\2025-03-13-develop_intro\corrleation.PNG" alt="corrleation" style="zoom: 50%;" />
 
 - 산점도를 보면, 음의 상관관계를 가자고 있습니다. 즉, 낮은 지출은 높은 빈곤율을 가진다는 것을 알 수 있습니다. 실제로, 북유럽 국가들의 복지 지출이 가장 많은 만큼 아동 빈곤율이 가장 낮은 반면에 미국, 멕시코 등 국가는 복지 지출이 적어 아동 빈곤율이 높습니다.
 
@@ -154,6 +162,6 @@ World Bank에서 제시한 Country Income Groups 지도에 따르면, 1인당 GD
 
 
 
-<img src="C:\Users\김충남\Desktop\2025-1\kse128-github-blog\KSE128.github.io\images\2025-03-13-develop_intro\tax collection.PNG" alt="tax collection" style="zoom:50%;" />
+<img src="{{site.url}}\images\2025-03-13-develop_intro\tax collection.PNG" alt="tax collection" style="zoom:50%;" />
 
 - 미국처럼 세금이 국민소득에 비해 적게 걷히는 나라들은 복지나 사회 서비스에 투자하는 돈도 적습니다. 그래서 미국에서는 빈부격차가 심해지고, 아동 빈곤율도 높아집니다. 이는 부모의 경제적 상황이 자녀 세대까지 영향을 미쳐 **계층 이동(Social Mobility)**이 어려워지는 문제가 생깁니다.
