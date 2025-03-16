@@ -10,7 +10,7 @@ use_math: true
 
 
 
-이 포스팅은 서울시립대학교 경제학부 개발경제학 수업 내용을 담고 있습니다.
+이 포스팅은 서울시립대학교 경제학부 개발경제학 수업 중 '**Introduction of Development Economics**'에 대한 내용을 담고 있습니다.
 
 ---
 
@@ -21,8 +21,6 @@ use_math: true
 #### Intro to this course
 
 ---
-
-
 
 ##### What is Development Economics?
 
@@ -66,7 +64,7 @@ World Bank가 나눈 기준에 따라 국가가 색깔로 표현되는 것을 �
 
 UN category에서는 World Bank와 다르게 최빈개발국을 제시했습니다. 이 국가들은 가난할 뿐만 아니라, 질병, 교육, 사회 불안정성도 심각한 수준입니다. UN은 저소득 국가 중에서도 더 심각한 상태의 국가들을 LDCs(최빈개발국)이라고 분류합니다.
 
-<img src="C:\Users\김충남\Desktop\2025-1\kse128-github-blog\KSE128.github.io\images\2025-03-13-develop_intro\LDCs.PNG" alt="LDCs" style="zoom:50%;" />
+<img src="{{site.url}}\images\2025-03-13-develop_intro\LDCs.PNG" alt="LDCs" style="zoom:50%;" />
 
 
 
