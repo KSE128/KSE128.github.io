@@ -147,6 +147,8 @@ $$
 지니계수는 소득 불평등 정도를 하나의 숫자로 나타낸 지표입니다. 
 
 <img src="{{site.url}}\images\2025-03-15-develop_definition_and_measures\Gini.PNG" alt="Gini" style="zoom:50%;" />
+
+
 $$
 \text{Gini Coefficient}=\frac{\text{Area between (perfect - equality Lorenz curve) and (actual Lorenz curve)}}{\text{Area under perfect - equality Lorenz curve}}\\ \\ \text{G}=\frac{A}{△\ BCD}
 $$
@@ -232,6 +234,8 @@ Amartya Sen's capability approach
 GDP만으로는 삶의 질을 파악할 수 없기 때문에 UN은 다차원적 지수를 도입했습니다. 그중 가장 널리 알려진 지표가 **HDI(Human Development Index)**입니다.  HDI 지표는 소득만으로 복지의 정도를 완벽하게 정의할 수 없기 때문에, 삶의 질을 포괄적으로 평가하기 위해 **Health(건강), Education(교육), Standard of living(생활 수준)**의 세 가지 요소를 포함합니다.
 
 <img src="{{site.url}}\images\2025-03-15-develop_definition_and_measures\HDI_formula.png" alt="HDI_formula" style="zoom: 50%;" />
+
+
 $$
 HDI_i = \frac{1}{3}\Sigma\frac{HDI_{ji}-HDI_{j\ min}}{HDI_{j\ max}-HDI_{j\ min}} \\ \\
 i=\text{country} \\
@@ -239,6 +243,8 @@ i=\text{country} \\
 \text{Education : Expected years of schooling + Mean years of schooling (new method since 2010)} \\
 \text{Standard of living : GNI per-capita (2011 PPP\$)}
 $$
+
+
 건강은 기대 수명으로 측정되며, 교육은 평균 교육 연수와 기대 교육 연수를 반영하여 개인의 학습 기회를 평가합니다. 생활수준은 1인당 국민소득(GNI per capita)을 기준으로 측정됩니다. 각 요소는 0에서 1 사이의 값으로 환산된 후 **동일한 가중치를 부여**받아 HDI가 산출됩니다. 
 
 총 HDI를 계산하기 전에 각각의 지표 값을 먼저 산출해야합니다. 각 지표에는 **최소값(Min)**과 **최대값(Max)**이 설정되어있으며 이들의 차이**(Max-Min)**가 분모가 됩니다. 그리고 **실제 값에서 최소값을 뺀 값(Actual value - Min)**이 분자가 됩니다. 이 두 값을 나눈 비율이 지표의 값이 되며, 세 가지 지표의 평균이 최종 HDI 값으로 결정됩니다.
@@ -248,6 +254,8 @@ $$
 **HDI 계산하기**
 
 <img src="{{site.url}}\images\2025-03-15-develop_definition_and_measures\calculate_HDI.png" alt="calculate_HDI" style="zoom:50%;" />
+
+
 $$
 \text{Health index}= \frac{75.0-20}{85-20}=0.846 \\
 \text{Expected years of schooling index}= \frac{13.9-0}{18-0}=0.772 \\
@@ -256,6 +264,8 @@ $$
 \text{Income index}= \frac{ln(8,856)-ln(100)}{ln(75,000)-ln(100)}=0.6773 \\
 \text{Human Development Index} = 0.7719
 $$
+
+
 
 위의 방식으로 **HDI 지수**를 구할 수 있게 됩니다.
 
@@ -277,7 +287,7 @@ $$
 
 
 
-##### Economic Development
+##### Result of Economic Development
 
 개발(Development)은 단순한 경제 성장이 아니라 **소득 증가, 빈곤 감소, 건강 개선, 교육 향상, 불평등 완화, 성평등 실현, 환경 보호** 등 종합적인 발전을 의미합니다.
 

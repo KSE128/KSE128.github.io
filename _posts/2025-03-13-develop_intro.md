@@ -113,7 +113,7 @@ World Bank에서 제시한 Country Income Groups 지도에 따르면, 1인당 GD
 
 - 일부 사회는 극심한 빈곤 속에도 교육과 문해력 향상에 정부와 가계가 많은 노력을 기울였습니다. 우리나라도 그런 국가 중 하나입니다.
 
-![educate](C{{site.url}}\images\2025-03-13-develop_intro\educate.png)
+![educate]({{site.url}}\images\2025-03-13-develop_intro\educate.png)
 
 - 동아시아 지역 국가들이 교육 성취도에서는 문화적으로 교육을 중시하는 경향이 있습니다. 위의 그래프에서는 이러한 경향을 볼 수 있습니다.
 
