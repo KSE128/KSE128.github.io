@@ -60,7 +60,7 @@ use_math: true
 
 **GDP** (**G**ross **D**omestic **P**roduct, 국내 총생산) 
 
-: 일정 기간 동안 한 국가 내에서 생산된 최종 재화와 서비스의 시장 가치
+일정 기간 동안 한 국가 내에서 생산된 최종 재화와 서비스의 시장 가치
 
 Y = C + I + G + NX (소비 + 투자 + 정부지출 + 순수출)
 
@@ -70,7 +70,7 @@ GDP의 경우, 국내에서 생산하는 사람들뿐만 아니라 국내에서 
 
 **GNP** (**G**ross **N**ational **P**roduct, 국민 총생산) 
 
-: 한 국가의 영구 거주자가 생산한 모든 최종 재화와 서비스의 시장 가치
+한 국가의 영구 거주자가 생산한 모든 최종 재화와 서비스의 시장 가치
 
 GNP = GDP + 해외 순소득
 
@@ -103,6 +103,8 @@ GNP의 경우, 국내에서 생산하는 사람들분만 아니라 자국민이 
 
 
 **Kuznet's ratio**
+
+
 $$
 \text{Kuznet's ratio}= \frac{\text{income received by top 20\%}}{\text{income received by bottom 40\%}}
 $$
@@ -124,7 +126,7 @@ $$
 
 
 
-<img src="{{site.url}}\images\2025-03-15-develop_definition_and_measures\Lorenz.PNG" alt="Lorenz" style="zoom:50%;" />
+<img src="{{site.url}}\images\2025-03-15-develop_definition_and_measures\Lorenz.PNG" alt="Lorenz" style="zoom:35%;" />
 
 위 그래프와 같이 **완전평등선(Line of equality)**와 실제 **로렌츠 곡선(Lorenz curve)**이 있습니다.
 
@@ -219,7 +221,7 @@ Amartya Sen's capability approach
 | Proportion  of literate adults  | 67%           | 92%            |
 | Life  Expectancy at Birth       | 65  years     | 72  years      |
 
-과테말라(Guatemala)는 GDP가 $4,400로 스리랑카(Sri Lanka)의 $3,180 보다 높으나, 문맹률과 기대수명에서는 스리랑카가 훨씬 우수합니다. 즉, 소득이 높다고 반드시 더 나은 삶의 질을 의미하지는 않습니다. 
+과테말라(Guatemala)는 GDP가 4,400 달러로 스리랑카(Sri Lanka)의 3,180 달러보다 높으나, 문맹률과 기대수명에서는 스리랑카가 훨씬 우수합니다. 즉, 소득이 높다고 반드시 더 나은 삶의 질을 의미하지는 않습니다. 
 
 두 개의 표는 GDP 같은 경제적 평균값만으로 국가 간 삶의 질을 평가하는 것이 한계가 있음을 보여줍니다. 따라서 GDP뿐만 아니라 복지, 문해율, 건강 등 다양한 삶의 질 지표를 함께 고려해야 합니다.
 
