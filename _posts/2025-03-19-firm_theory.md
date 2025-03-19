@@ -1,18 +1,18 @@
 ---
 published: true
 layout: single
-title:  "Industrial Organiztion : Firm Theory"
+title:  "Industrial Organization : Firm Theory"
 categories: Industrial
 tag: Study
 toc: true
 use_math: true
 ---
 
-이 포스팅은 서울시립대학교 경제학부 산업조직론 수업 중 '**Industrial Organiztion : Firm Theory**'에 대한 내용을 담고 있습니다.
+이 포스팅은 서울시립대학교 경제학부 산업조직론 수업 중 '**Industrial Organization : Firm Theory**'에 대한 내용을 담고 있습니다.
 
 ---
 
-### Industrial Organiztion : Firm Theory
+### Industrial Organization : Firm Theory
 
 
 
