@@ -8,7 +8,7 @@ toc: true
 use_math: true
 ---
 
-이 포스팅은 서울시립대학교 경제학부 산업조직론 수업 중 '**Firm Theory**'에 대한 내용을 담고 있습니다.
+이 포스팅은 서울시립대학교 경제학부 산업조직론 수업 중 '**Industrial Organiztion : Firm Theory**'에 대한 내용을 담고 있습니다.
 
 ---
 
