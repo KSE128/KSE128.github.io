@@ -1,7 +1,7 @@
 ---
 published: true
 layout: single
-title:  "Firm Theory"
+title:  "Industrial Organiztion : Firm Theory"
 categories: Industrial
 tag: Study
 toc: true
