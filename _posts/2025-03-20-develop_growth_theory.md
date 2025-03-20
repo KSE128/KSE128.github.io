@@ -12,7 +12,7 @@ use_math: true
 
 ---
 
-### Development Economics : Growth Theory
+## Development Economics : Growth Theory
 
 #### Introduction
 

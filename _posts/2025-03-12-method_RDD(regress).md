@@ -12,7 +12,7 @@ use_math: true
 
 ---
 
-### RDD (Regression Discontinuity Design, 회귀 불연속 설계)
+## RDD (Regression Discontinuity Design, 회귀 불연속 설계)
 
 #### Introduction
 

@@ -16,7 +16,7 @@ use_math: true
 
 
 
-### RDD (Resilient Distributed DataSet)
+## RDD (Resilient Distributed DataSet)
 
 #### Introduction
 

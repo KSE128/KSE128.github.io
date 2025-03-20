@@ -14,7 +14,7 @@ ___
 
 
 
-### DID(Difference in Differences, 이중차분법)
+## DID(Difference in Differences, 이중차분법)
 
 
 

@@ -12,7 +12,7 @@ use_math: true
 
 ---
 
-### Industrial Organization : Firm Theory
+## Industrial Organization : Firm Theory
 
 
 
