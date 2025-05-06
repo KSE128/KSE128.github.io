@@ -157,15 +157,18 @@ Average Neighbor Degree는 어떤 정점에 연결된 이웃 정점들의 평균
 한 정점이 다른 모든 정점들과 얼마나 가까운지를 나타내는 지표입니다. 네트워크에서 많은 다른 정점들과 가까운 정점일수록 중심적이다는 아이디어를 반영합니다.
 
 
+
 $$
 \text{In graph,} \ \ G=(V,E) \\
 c_{Cl}(v) = \frac{1}{\sum_{u \in V} \text{dist}(v, u)}
 $$
 
 
+
 여기서 dist(v,u)는 정점 v와 u 사이의 최단 거리를 의미합니다. v 입장에서 자기를 제외한 모든 vertex와의 거리를 고려해야 합니다. 합이 크면 클수록 centrality가 작아집니다. 거리가 짧을수록 중심성이 높다고 판단합니다. 계산한 결과, 즉 c_CI(v)가 크면 클수록 centrality가 커지게 됩니다.
 
 정규화된 형태로 나타내면 다음과 같은 형태가 나타납니다.
+
 
 
 $$
@@ -174,14 +177,18 @@ N_v = |V| \ :\text{the total number of vertices in the graph}
 $$
 
 
+
 정규화된 형태는 0과 1 사이의 값을 가지게 됩니다. 
 
 
 
 또, 
+
+
 $$
 N_v-1= \text{max}(\sum_{u \in V} \text{dist}(v, u))
 $$
+
 
 
 로 이해할 수 있습니다.
@@ -193,10 +200,12 @@ $$
 중개 중심성은 어떤 정점이 다른 정점 쌍 간의 최단 경로에 얼마나 자주 위치하는지를 측정합니다. 즉, 네트워크에서 정보 흐르름을 이어주는 '중개자' 역할을 얼마나 잘하고 있는지를 나타냅니다.
 
 
+
 $$
 G=(V,E) \\
 C_B(v) = \sum_{s \ne t \ne v \in V } \frac{\sigma(s, t \mid v)}{\sigma(s, t)}
 $$
+
 
 
 **σ(s,t)** : 정점 s와 t 사이의 **모든 최단 경로의 수**
@@ -218,10 +227,12 @@ Q. **σ(s,t∣v) = 0** 이 될 수 있는가?
 그래서, 전체 네트워크 간 비교를 위해 요소들을 나누면 다음과 같습니다.
 
 
+
 $$
 \frac{(N_v - 1)(N_v - 2)}{2}= \binom{v-1}{2} \\
 N_v = |V| \ :\text{the number of vertices}
 $$
+
 
 
 네트워크의 **다리 역할**을 하는 정점을 강조합니다. 
@@ -258,10 +269,12 @@ $$
 행렬 형태로 다음과 같이 표현할 수 있습니다.
 
 
+
 $$
 A \cdot c_{Ei} = \alpha^{-1} \cdot c_{Ei} \\ \
 c_{Ei} : \text{Eigenvector corresponding to the maximum eigenvalue of adjacency matrix A}
 $$
+
 
 
 고유벡터 중심성은 인접행렬 A의 최대 고윳값에 대응하는 고유벡터라고 할 수 있습니다.
@@ -328,16 +341,19 @@ vetex C의 Centrality 를 구해봅시다.
 **Closeness Centrality**
 
 
+
 $$
 c^{\text{norm}}_{Cl}(v) = \frac{N_v - 1}{\sum_{u \in V} \text{dist}(v, u)} \\
 N_v = |V| \ :\text{the total number of vertices in the graph}
 $$
 
 
+
 와 같습니다. 자기 자신을 제외한 모든 노드들과의 거리를 합한 후 공식에 대입합니다.
 $$
 \frac{N_v(7)-1}{2+1+2+1+2+1}=\frac{6}{9}=0.667
 $$
+
 
 
 분모에서 합하는 순서는 A와 C 사이의 거리, B와 C 사이의 거리, D와 C 사이의 거리 ... 로 이루어져 있습니다.
@@ -419,9 +435,11 @@ vetex C의 Centrality 를 구해봅시다.
 **Closeness Centrality**
 
 
+
 $$
 \frac{N_v(7)-1}{2+1+2+1+2+1}=\frac{6}{9}=0.667
 $$
+
 
 
 분모에서 합하는 순서는 A와 C 사이의 거리, B와 C 사이의 거리, D와 C 사이의 거리 ... 로 이루어져 있습니다.

@@ -29,14 +29,15 @@ use_math: true
 ##### Undirected Graph (무방향 그래프)
 
 
+
 $$
 G=(V,\ E) \\
 u,v \in V , \ \{u,v\} \in E
 $$
 
 
-Vertices(점, set)는 Node라고도 합니다. Edges는 link라고 합니다.
 
+Vertices(점, set)는 Node라고도 합니다. Edges는 link라고 합니다.
 
 $$
 N_v= |V| : \text{order of the graph} \\
@@ -122,9 +123,12 @@ IGRAPH 7227394 DN-- 3 4 --
 그래프는 인접 행렬로 표현할 수 있으며, 보통 A라고 표기합니다.
 
 
+
 $$
 A_{ij}=1 \ \ \text{if an edge exists from i to j}
 $$
+
+
 
 
 
@@ -424,6 +428,7 @@ list.vertex.attributes(g.lazega)
 ##### Basic Graph Concepts
 
 
+
 $$
 G=(V,\ E) \\
 u,v \in V , \ \{u,v\} \in E
@@ -701,9 +706,11 @@ $no
 n개의 정점을 가지는 complete graph는 총
 
 
+
 $$
 \frac{n(n-1)}{2}
 $$
+
 
 
 개의 간선을 가집니다. 
