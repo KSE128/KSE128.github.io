@@ -1,3 +1,15 @@
+---
+published: true
+layout: single
+title:  "Network : Descriptive Analysis of Network Graph Characteristics (1)"
+toc: true
+use_math: true
+---
+
+이 포스팅은 서울시립대학교 통계학과 네트워크자료분석 수업 중 **'Network : Descriptive Analysis of Network Graph Characteristics' 의 Part 1**에 대한 내용을 담고 있습니다.
+
+---
+
 ### Chapter 4 Descriptive Analysis of Network Graph Characteristics (Part 1)
 
 
@@ -44,9 +56,9 @@
 
 karate 데이터를 이용해서 확인해봅시다.
 
-<img src="C:\Users\김충남\Desktop\2025-1\네트워크자료분석\L3\karate1.PNG" alt="karate1"  />
+<img src="{{site.url}}\images\2025-04-12-network_chap4_1\karate1.PNG" alt="karate1"  />
 
-<img src="C:\Users\김충남\Desktop\2025-1\네트워크자료분석\L3\karate.PNG" alt="karate"  />
+<img src="{{site.url}}\images\2025-04-12-network_chap4_1\karate.PNG" alt="karate"  />
 
 ```R
 > degree(karate)
@@ -75,7 +87,7 @@ Actor 29 Actor 30 Actor 31 Actor 32 Actor 33   John A
 
 쉽게 이해했을 때, degree는 연결 개수, strength는 연결의 '강도'의 총합(얼마나 강하게 연결되어있는가)이라고 생각합니다!
 
-![degree_strength](C:\Users\김충남\Desktop\2025-1\네트워크자료분석\L3\degree_strength.PNG)
+![degree_strength]({{site.url}}\images\2025-04-12-network_chap4_1\degree_strength.PNG)
 
 degree를 히스토그램으로 나타내면, 총 3개의 그룹으로 나뉩니다. degree가 낮은 그룹은 0에 가까운 왼쪽에 위치해있고, degree가 높은 그룹은 오른쪽에 위치해있습니다. karate 데이터의 경우, Actor 1과 34가 가장 많은 연결을 가진 노드입니다. 또, Actor 2,3,33은 Actor 1과 34와 가까운 관계를 가지고 있으며, 일정한 연결을 통해 네트워크에서 중요한 역할을 하고 있습니다.
 
@@ -103,7 +115,7 @@ yeast 데이터를 이용하여 확인해봅시다!
 +      main="Log-Log Degree Distribution")
 ```
 
-<img src="C:\Users\김충남\Desktop\2025-1\네트워크자료분석\L3\yeast.PNG" alt="yeast" style="zoom:80%;" />
+<img src="{{site.url}}\images\2025-04-12-network_chap4_1\yeast.PNG" alt="yeast" style="zoom:80%;" />
 
 degree distribution의 그래프에서 노란색으로 칠한 부분만 강하게 연결된 것을 알 수 있습니다. 그외의 부분에서는 잔잔하게 연결되어있습니다. karate 데이터보다 분포가 더 다양합니다.
 
@@ -120,7 +132,7 @@ Average Neighbor Degree는 어떤 정점에 연결된 이웃 정점들의 평균
 +      ylab = "Log Average Neighbor Degree")
 ```
 
-<img src="C:\Users\김충남\Desktop\2025-1\네트워크자료분석\L3\average_neighbor_degree.PNG" alt="average_neighbor_degree" style="zoom:60%;" />
+<img src="{{site.url}}\images\2025-04-12-network_chap4_1\average_neighbor_degree.PNG" alt="average_neighbor_degree" style="zoom:60%;" />
 
 교수님 설명 추가 !! 
 
@@ -143,23 +155,35 @@ Average Neighbor Degree는 어떤 정점에 연결된 이웃 정점들의 평균
 **Closeness centrality(근접 중심성)**
 
 한 정점이 다른 모든 정점들과 얼마나 가까운지를 나타내는 지표입니다. 네트워크에서 많은 다른 정점들과 가까운 정점일수록 중심적이다는 아이디어를 반영합니다.
+
+
 $$
 \text{In graph,} \ \ G=(V,E) \\
 c_{Cl}(v) = \frac{1}{\sum_{u \in V} \text{dist}(v, u)}
 $$
+
+
 여기서 dist(v,u)는 정점 v와 u 사이의 최단 거리를 의미합니다. v 입장에서 자기를 제외한 모든 vertex와의 거리를 고려해야 합니다. 합이 크면 클수록 centrality가 작아집니다. 거리가 짧을수록 중심성이 높다고 판단합니다. 계산한 결과, 즉 c_CI(v)가 크면 클수록 centrality가 커지게 됩니다.
 
 정규화된 형태로 나타내면 다음과 같은 형태가 나타납니다.
+
+
 $$
 c^{\text{norm}}_{Cl}(v) = \frac{N_v - 1}{\sum_{u \in V} \text{dist}(v, u)} \\
 N_v = |V| \ :\text{the total number of vertices in the graph}
 $$
+
+
 정규화된 형태는 0과 1 사이의 값을 가지게 됩니다. 
+
+
 
 또, 
 $$
 N_v-1= \text{max}(\sum_{u \in V} \text{dist}(v, u))
 $$
+
+
 로 이해할 수 있습니다.
 
 
@@ -167,10 +191,14 @@ $$
 **Betweenness centrality(중개 중심성)**
 
 중개 중심성은 어떤 정점이 다른 정점 쌍 간의 최단 경로에 얼마나 자주 위치하는지를 측정합니다. 즉, 네트워크에서 정보 흐르름을 이어주는 '중개자' 역할을 얼마나 잘하고 있는지를 나타냅니다.
+
+
 $$
 G=(V,E) \\
 C_B(v) = \sum_{s \ne t \ne v \in V } \frac{\sigma(s, t \mid v)}{\sigma(s, t)}
 $$
+
+
 **σ(s,t)** : 정점 s와 t 사이의 **모든 최단 경로의 수**
 
 **σ(s,t∣v)** : 그 중 **정점 v**를 지나가는 최단 경로의 수
@@ -179,9 +207,7 @@ $$
 
 Q. **σ(s,t∣v) = 0** 이 될 수 있는가? 
 
-<img src="C:\Users\김충남\Desktop\2025-1\네트워크자료분석\L3\σ(s,t∣v)=0.png" alt="σ(s,t∣v)=0" style="zoom: 80%;" />
-
-
+<img src="{{site.url}}\images\2025-04-12-network_chap4_1\σ(s,t∣v)=0.png" alt="σ(s,t∣v)=0" style="zoom: 80%;" />
 
 가능합니다!
 
@@ -190,10 +216,14 @@ Q. **σ(s,t∣v) = 0** 이 될 수 있는가?
 위의 betweenness centrality 계산 방법은 0과 1 사이의 값으로 측정할 수 없습니다. 
 
 그래서, 전체 네트워크 간 비교를 위해 요소들을 나누면 다음과 같습니다.
+
+
 $$
 \frac{(N_v - 1)(N_v - 2)}{2}= \binom{v-1}{2} \\
 N_v = |V| \ :\text{the number of vertices}
 $$
+
+
 네트워크의 **다리 역할**을 하는 정점을 강조합니다. 
 
 즉, 여러 노드들 사이의 **최단 경로에 자주 등장**하는 정점일수록 betweenness 중심성이 높습니다.
@@ -217,17 +247,23 @@ betweenness centrality는 degree centrality와 다른 방향을 지니고 있어
 Eigenvector centrality는 단순히 얼마나 많은 노드와 연결되어있는지를 넘어서 누구와 연결되어있는가를 중요하게 생각하고 있습니다. 즉, 영향력 있는 노드와 연결되어 있다면, 그 노드 자체도 중요하다는 아이디어에 기반합니다. 
 
 
+
 $$
 G=(V,E), \ \ \text{adjacency matrix A}, \\
 c_{Ei}(v) = \alpha \sum_{\{u, v\} \in E} c_{Ei}(u)
 $$
 
 
+
 행렬 형태로 다음과 같이 표현할 수 있습니다.
+
+
 $$
-A \cdot c_{Ei} = \alpha^{-1} \cdot c_{Ei} \\
+A \cdot c_{Ei} = \alpha^{-1} \cdot c_{Ei} \\ \
 c_{Ei} : \text{Eigenvector corresponding to the maximum eigenvalue of adjacency matrix A}
 $$
+
+
 고유벡터 중심성은 인접행렬 A의 최대 고윳값에 대응하는 고유벡터라고 할 수 있습니다.
 
 
@@ -255,7 +291,7 @@ $$
 
 Example Graph 1
 
-<img src="C:\Users\김충남\Desktop\2025-1\네트워크자료분석\L3\example_graph1.PNG" alt="example_graph1" style="zoom: 67%;" />
+<img src="{{site.url}}\images\2025-04-12-network_chap4_1\example_graph1.PNG" alt="example_graph1" style="zoom: 67%;" />
 
 ```R
 > edges <- c("A", "B", "B", "C", "B", "D", "C", "G", "C", "E", "E", "F")
@@ -290,14 +326,20 @@ F      F     0.353       0.000       0.311
 vetex C의 Centrality 를 구해봅시다.
 
 **Closeness Centrality**
+
+
 $$
 c^{\text{norm}}_{Cl}(v) = \frac{N_v - 1}{\sum_{u \in V} \text{dist}(v, u)} \\
 N_v = |V| \ :\text{the total number of vertices in the graph}
 $$
+
+
 와 같습니다. 자기 자신을 제외한 모든 노드들과의 거리를 합한 후 공식에 대입합니다.
 $$
 \frac{N_v(7)-1}{2+1+2+1+2+1}=\frac{6}{9}=0.667
 $$
+
+
 분모에서 합하는 순서는 A와 C 사이의 거리, B와 C 사이의 거리, D와 C 사이의 거리 ... 로 이루어져 있습니다.
 
 정규화한 공식에 따르면, Closeness Centrality는 0.667이 됩니다.
@@ -310,6 +352,8 @@ $$
 N_v = |V| \ :\text{the number of vertices}
 $$
 
+
+
 | 엣지 | 값   | 엣지 | 값   | 엣지 | 값   | 엣지 | 값   |
 | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- |
 | AB   | 0    | BD   | 0    | DE   | 1    | EF   | 0    |
@@ -319,9 +363,12 @@ $$
 | AG   | 1    |      |      |      |      |      |      |
 
 값을 모두 합해보면, 11이라는 값이 나옵니다. 
+
+
 $$
 \frac{11}{15} \approx 0.7333
 $$
+
 
 
 Betweenness Centralilty는 0.733의 값을 가집니다.
@@ -338,7 +385,7 @@ Betweenness Centralilty는 0.733의 값을 가집니다.
 
 Example Graph 2
 
-<img src="C:\Users\김충남\Desktop\2025-1\네트워크자료분석\L3\example_graph2.PNG" alt="example_graph2" style="zoom:67%;" />
+<img src="{{site.url}}\images\2025-04-12-network_chap4_1\example_graph2.PNG" alt="example_graph2" style="zoom:67%;" />
 
 ```R
 > g <- graph(edges, directed = FALSE)
@@ -370,9 +417,13 @@ F      F     0.353       0.000       0.175
 vetex C의 Centrality 를 구해봅시다.
 
 **Closeness Centrality**
+
+
 $$
 \frac{N_v(7)-1}{2+1+2+1+2+1}=\frac{6}{9}=0.667
 $$
+
+
 분모에서 합하는 순서는 A와 C 사이의 거리, B와 C 사이의 거리, D와 C 사이의 거리 ... 로 이루어져 있습니다.
 
 정규화한 공식에 따르면, Closeness Centrality는 0.667이 됩니다.
@@ -399,15 +450,9 @@ Betweenness Centralilty는 0.533의 값을 가집니다.
 
 
 
-**Eigenvector centrality**
-
-여기서 Eigenvector centrality는 어떻게 구하는 것일까용 ~ 나도 몰라 ... R에 따르면 0.891로 나오네용
-
-
-
 ##### Back to Karate Example
 
-<img src="C:\Users\김충남\Desktop\2025-1\네트워크자료분석\L3\karate_back.PNG" alt="karate_back" style="zoom:80%;" />
+<img src="{{site.url}}\images\2025-04-12-network_chap4_1\karate_back.PNG" alt="karate_back" style="zoom:80%;" />
 
 위의 4가지 그래프는 Karate 데이터의 중심성 그래프를 표현하고 있습니다. 
 
@@ -438,13 +483,17 @@ Authorities 점수는 해당 노드가 얼마나 많은 신회할 수 있는 허
 
 
 **HITS 알고리즘 핵심 아이디어**
+
+
 $$
 \text{Authority Score : } a_i \\
 \text{Hub Score : } h_i
 $$
 
 
+
 Scores는 재귀적으로 정의됩니다.
+
 
 
 $$
@@ -452,12 +501,16 @@ a_i = \sum_{j: j \to i} h_j \\
 $$
 
 
+
 : 나를 가리키는 노드들의 허브 점수 합
+
 
 
 $$
 h_i = \sum_{j: i \to j} h_j
 $$
+
+
 : 내가 가리키는 노드들의 권위 점수 합
 
 
@@ -473,27 +526,44 @@ $$
 A는 방향 그래프(directed graph)의 인접 행렬(adjacency matrix)입니다.
 
 
+
 $$
 A_{ij} = \begin{cases} 
 1 & \text{if } i \to j \\
 0 & \text{otherwise}
 \end{cases}
 $$
+
+
 만약, 노드 i에서 노드 j로 가는 화살표가 존재한다면 1의 값을 가지고, 그렇지 않다면 0의 값을 가집니다.
+
+
 $$
 \text{Authority scores : Principal eigenvector of }A^TA \\
 \text{Hub scores : Principal eigenvector of }AA^T
 $$
+
+
 Authority 점수는 현재의 허브 점수를 바탕으로 계산되며, 
+
+
 $$
 a \leftarrow A^Th
 $$
+
+
 이는 행렬 A의 전치행렬과 허브 점수 벡터 h의 곱으로 구합니다.
 
+
+
 반대로, Hubs 점수는 현재의 Authority 점수를 이용해 계산하며, 
+
+
 $$
 h \leftarrow Aa
 $$
+
+
 인접 행렬 A와 Authority 점수 벡터 a의 곱으로 나타납니다.
 
 
@@ -502,7 +572,7 @@ $$
 
 
 
-<img src="C:\Users\김충남\Desktop\2025-1\네트워크자료분석\L3\HITS.PNG" alt="HITS" style="zoom:80%;" />
+<img src="{{site.url}}\images\2025-04-12-network_chap4_1\HITS.PNG" alt="HITS" style="zoom:80%;" />
 
 위의 그래프는 HITS(Hyperlink-Induced Topic Search) 알고리즘의 시각적 예시로 웹페이지나 블로그처럼 방향성이 있는 네트워크에서 노드의 중요도를 두 가지 관점, Hubs와 Authorities 관점에서 평가합니다.
 
@@ -548,7 +618,7 @@ Actor 20--John A가 가장 높은 중요도를 가지고, 다음으로,Mr Hi --A
 
 네트워크 관계도를 통해 확인해보면,
 
-![karate1](C:\Users\김충남\Desktop\2025-1\네트워크자료분석\L4\karate1.PNG)
+![karate1]({{site.url}}\images\2025-04-12-network_chap4_1\karate1.PNG)
 
 Mr Hi와 John A는 각 그룹의 핵심 인물임을 확인할 수 있습니다. 
 
@@ -588,4 +658,4 @@ A --- B --- C
 
 igraph 패키지에서 line.graph(G)를 이용하면, line graph형태로 변환되어 나타납니다. line graph로 변환하면 원래 네트워크의 edge를 vertex처럼 다룰 수 있어서, vertex centrality 지표를 edge 분석에 활용할 수 있습니다.
 
-<img src="C:\Users\김충남\Desktop\2025-1\네트워크자료분석\L4\line_graph.PNG" alt="line_graph" style="zoom:80%;" />
+<img src="{{site.url}}\images\2025-04-12-network_chap4_1\line_graph.PNG" alt="line_graph" style="zoom:80%;" />

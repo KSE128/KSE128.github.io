@@ -2,16 +2,15 @@
 published: true
 layout: single
 title:  "Network : Manipulating Network Data"
-categories: Network
-tag: Activity
 toc: true
 use_math: true
-
 ---
 
 이 포스팅은 서울시립대학교 통계학과 네트워크자료분석 수업 중 **'Network : Manipulating Network Data'**에 대한 내용을 담고 있습니다.
 
 ---
+
+
 
 
 
@@ -29,11 +28,16 @@ use_math: true
 
 ##### Undirected Graph (무방향 그래프)
 
+
 $$
 G=(V,\ E) \\
 u,v \in V , \ \{u,v\} \in E
 $$
+
+
 Vertices(점, set)는 Node라고도 합니다. Edges는 link라고 합니다.
+
+
 $$
 N_v= |V| : \text{order of the graph} \\
 N_e= |E| : \text{size of the graph}
@@ -116,9 +120,13 @@ IGRAPH 7227394 DN-- 3 4 --
 ##### Adjacency Representation(인접행렬을 통해 그래프 표현하기)
 
 그래프는 인접 행렬로 표현할 수 있으며, 보통 A라고 표기합니다.
+
+
 $$
 A_{ij}=1 \ \ \text{if an edge exists from i to j}
 $$
+
+
 
 ```R
 > as_adjacency_matrix(dg) _ directed graph
@@ -415,10 +423,13 @@ list.vertex.attributes(g.lazega)
 
 ##### Basic Graph Concepts
 
+
 $$
 G=(V,\ E) \\
 u,v \in V , \ \{u,v\} \in E
 $$
+
+
 
 그래프는 vertex들의 집합 V와 이 정점들을 연결하는 edge들의 집합 E로 구성됩니다.
 
@@ -688,9 +699,13 @@ $no
 **complete graph(완전 그래프)**는 모든 정점 쌍이 하나의 고유한 간선으로 연결되어 있는 그래프입니다.
 
 n개의 정점을 가지는 complete graph는 총
+
+
 $$
 \frac{n(n-1)}{2}
 $$
+
+
 개의 간선을 가집니다. 
 
 
