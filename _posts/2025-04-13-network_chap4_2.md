@@ -1,3 +1,18 @@
+---
+published: true
+layout: single
+title:  "Network : Descriptive Analysis of Network Graph Characteristics (2)"
+categories: Network
+toc: true
+use_math: true
+---
+
+이 포스팅은 서울시립대학교 통계학과 네트워크자료분석 수업 중 **'Network : Descriptive Analysis of Network Graph Characteristics' 의 Part 2**에 대한 내용을 담고 있습니다.
+
+---
+
+
+
 ### Chapter 4 Descriptive Analysis of Network Graph Characteristics (Part 2)
 
 
@@ -18,7 +33,11 @@ Network Cohesion(네트워크 응집력)이란, 네트워크의 밀접한 연결
 
 Karate 네트워크 데이터를 이용하여 **clique census**를 파악할 수 있습니다.
 
-: clique census란? 네트워크 내에 존재하는 모든 크기의 clique를 세고 기록하는 과정
+
+
+clique census란? 
+
+네트워크 내에 존재하는 모든 크기의 clique를 세고 기록하는 과정
 
 ```R
 > table(sapply(cliques(karate), length))
@@ -81,7 +100,7 @@ clique number가 크면 클수록 그래프의 tightness 측면에서는 tight�
 
 간단한 예시를 통해 이해해봅시다!
 
-<img src="C:\Users\김충남\Desktop\2025-1\네트워크자료분석\L4\max_simple_example.png" alt="max_simple_example" style="zoom: 40%;" />
+<img src="{{site.url}}\images\2025-04-13-network_chap4_2\max_simple_example.png" alt="max_simple_example" style="zoom: 40%;" />
 
 vertex 1,2,3이 서로 연결되어 있고, vertex 4는 1,2와만 연결되어 있있습니다.
 
@@ -167,7 +186,7 @@ K-core 분해는 흔히 양파처럼 층을 이루는 구조로 나타납니다.
 
 이러한 특성 때문에, K-core 분해는 네트워크의 **core-periphery 구조(중심-주변 구조)**를 시각적으로 파악하는 데 매우 유용합니다. 
 
-<img src="C:\Users\김충남\Desktop\2025-1\네트워크자료분석\L4\kcore.PNG" alt="kcore" style="zoom:50%;" />
+<img src="{{site.url}}\images\2025-04-13-network_chap4_2\kcore.PNG" alt="kcore" style="zoom:50%;" />
 
 
 
@@ -183,7 +202,7 @@ K-core 분해는 흔히 양파처럼 층을 이루는 구조로 나타납니다.
 
 **k-star graph**란, 중심 노드가 1개가 있고, 이 중심과 주변 노드들이 각각 간선 1개로만 연결된 구조입니다.
 
-<img src="C:\Users\김충남\Desktop\2025-1\네트워크자료분석\L4\kstar.PNG" alt="kstar" style="zoom: 67%;" />
+<img src="{{site.url}}\images\2025-04-13-network_chap4_2\kstar.PNG" alt="kstar" style="zoom: 67%;" />
 
 여기서 **중심 정점**은 1, **주변 정점**은 2, 3, 4, 5, 6, 7로 각각 간선 하나로 1에 연결됩니다.
 
@@ -252,14 +271,6 @@ Motifs의 예시로는 두 가지가 있는데, **Fan(팬 구조)**로 **하나�
 
 
 
-##### Density and Related Notions of Relative Frequency
-
-질문 후 정리
-
-
-
-
-
 ##### Ego-centric Graph
 
 **Ego-centric Graph**는 **특정 vertex 하나(ego)를 중심**으로, 그와 **직접 연결된 이웃(alters)만 포함**하는 **subgraph 네트워크**입니다. Ego-centric Graph의 구성 요소는 **ego, alters, edge**로 이루어져있습니다. **ego**는 분석의 **중심이 되는 노드**입니다. **alters**는 **ego와 직접 연결**된 이웃 노드들이고, **edge**는 **ego와 이웃들 사이의 관계 또는 이웃들끼리의 관계**입니다. ego-centric graph는 특정 노드를 둘러싼 지역 구조를 탐색할 수 있게 해주며, 해당 노드의 즉각적인 환경과 관계에 대한 통찰력을 제공하기 때문에 네트워크 분석에 유용합니다.
@@ -296,9 +307,13 @@ Motifs의 예시로는 두 가지가 있는데, **Fan(팬 구조)**로 **하나�
 ##### Global Clustering (Transitivity)
 
 **Clustering Coefficient 또는 Transitivity**는 그래프에서 **삼각형 구조가 얼마나 잘 형성**되는지를 나타내는 지표입니다. 
+
+
 $$
 cl_T(G) = \frac{3 \times \text{Number of triangles}}{\text{Number of connected triples}}
 $$
+
+
 삼각형 :  세 정점이 서로 연결되어 있는 구조 (예 : A-B-C-A)
 
 connected triple : 세 정점 중 하나가 중심이 되어 양쪽과 연결된 구조 (예 : A-B-C)
@@ -316,7 +331,9 @@ Clustering Coefficient 지표는 전체 그래프 안에 connected triple들이 
 
 간단한 예제를 통해 이해해보겠습니다.
 
-<img src="C:\Users\김충남\Desktop\2025-1\네트워크자료분석\L4\global_ex.jpg" alt="global_ex" style="zoom: 40%;" />
+<img src="{{site.url}}\images\2025-04-13-network_chap4_2\global_ex.jpg" alt="global_ex" style="zoom: 40%;" />
+
+
 $$
 \text{edge}: \{ (A-B), (A-C), (B-C), (B-D) \} \\
 \text{Number of triangles : 1 (A-B-C connected)} \\
@@ -324,6 +341,7 @@ $$
 \{ (A-B-C), (B-A-D), (B-A-C), (B-C-D), (C-A-B) \} \\
 cl_T(G) = \frac{3 \times 1}{5}=0.6
 $$
+
 
 
 이 네트워크에서는 5개의 연결된 triple 중 1개만이 삼각형을 형성하고, 그 하나의 삼각형은 세 방향에서 볼 수 있어서 x 3을 해줍니다. 이는 전제적으로 약 60%의 연결된 triple이 삼각형으로 닫히게 됩니다.
@@ -349,20 +367,30 @@ $$
 정점 v를 기준으로 d_v는 정점 v의 차수를 의미합니다. 즉, v와 연결된 이웃 수를 의미합니다.
 
 
+
 $$
 \tau_3(v) = \binom{d_v}{2}
 $$
+
+
 이건 v를 중심으로 만들어질 수 있는 connected triple의 수입니다. v의 이웃들 중에서 두 명을 뽑아 삼각형을 만들 수 있는 잠재적 경우의 수를 의미합니다.
+
+
 $$
 \tau_{\Delta}(v) : \text{number of triangles involving v}
 $$
+
+
 정점 v가 실제로 포함된 삼각형(triangle)의 수를 의미합니다.
+
 
 
 $$
 cl(v)= \frac{\tau_{\Delta}(v)}{\tau_3(v)}
 $$
- 분자는 실제 삼각형 수를 의미하고, 분모는 가능한 삼각형의 수를 의미합니다. 즉, 이웃 중 두 명이 연결될 수 있는 경우의 수를 의미합니다.
+ 
+
+분자는 실제 삼각형 수를 의미하고, 분모는 가능한 삼각형의 수를 의미합니다. 즉, 이웃 중 두 명이 연결될 수 있는 경우의 수를 의미합니다.
 
 이 비율은 정점 v의 이웃들이 얼마나 서로 연결되어 있는지를 나타냅니다.
 
@@ -383,15 +411,20 @@ $$
 
 이를 간단한 예제로 이해해보겠습니다.
 
-<img src="C:\Users\김충남\Desktop\2025-1\네트워크자료분석\L4\global_ex.jpg" alt="global_ex" style="zoom:40%;" />
+<img src="{{site.url}}\images\2025-04-13-network_chap4_2\global_ex.jpg" alt="global_ex" style="zoom:40%;" />
+
+
 $$
 \text{edge}: \{ (A-B), (A-C), (B-C), (B-D) \}
 $$
 
 
+
 정점 B의 Local Clustering Coefficient를 계산해봅시다!
 
 위의 그래프에서 B와 직접 연결된 정점들은 A,C,D입니다.
+
+
 $$
 d_B=3
 $$
@@ -401,22 +434,32 @@ $$
 \{(A-B-C),(A-B-D),(C-B-D)\}
 $$
 
+
+
 가 가능한 삼각형 후보인데, 
 
 
 
 실제 삼각형 수는
+
+
 $$
 \tau_{\Delta}(B)=1
 $$
+
+
 가 됩니다.
 
 
 
 이를 수식에 대입하면,
+
+
 $$
 cl(B)= \frac{\tau_{\Delta}(B)}{\tau_3(B)}=\frac{1}{3} \approx0.333
 $$
+
+
 이를 해석하면, 정점 B 주변에는 세 명의 이웃이 있고, 이 중 한 쌍만 서로 연결되어 있습니다.
 
 따라서 B의 local clustering coefficient는 0.333 (33.%)라고 할 수 있습니다.
@@ -456,18 +499,24 @@ AIDS blog의 네트워크 자료의 reciprocity 값을 확인해보니, 실제�
 
 간단한 예제로 직접 계산해봅시다!!
 
-<img src="C:\Users\김충남\Desktop\2025-1\네트워크자료분석\L4\recipro_dg.JPG" alt="recipro_dg" style="zoom:40%;" />
+<img src="{{site.url}}\images\2025-04-13-network_chap4_2\recipro_dg.JPG" alt="recipro_dg" style="zoom:40%;" />
 
 Dyadic Reciprocity를 먼저 계산해보면,
+
+
 $$
 \text{asymmetric dyads = 2, mutual dyads = 1} \rightarrow 1/2=0.5
 $$
 
 
+
 Edge-based Reciprocity를 계산해보면,
+
+
 $$
 \text{edges = 4, reciprocated edges=2} \rightarrow 2/4=0.5
 $$
+
 
 
 이 경우에는 Dyadic Reciprocity와 Edge-based Reciprocity 값이 동일합니다.
@@ -494,9 +543,12 @@ $$
 ```
 
 yeast 그래프는 전체적으로 연결되어 있지 않습니다. 하지만, 대부분의 노드는 하나의 큰 component에 포함되어 있습니다. 이 giant component는 전체 2617개 노드 중 2375개를 포함합니다.
+
+
 $$
 \frac{2375}{2617} \approx 0.907 \rightarrow 90\%
 $$
+
 
 
 ##### Small-world property
@@ -536,9 +588,12 @@ k의 값이 클수록 그래프는 정점 제거에 강한(덜 취약한) 구조
 이 값도 클수록 네트워크가 간선 제거에 더 강하다는 것을 의미합니다.
 
 
+
 $$
 \text{Vertex connectivity ≤ Edge connectivity ≤ Minimum degree} \ d_{min}
 $$
+
+
 어떤 정점(vertex)을 제거하면 관련된 간선(edge)도 함께 사라지기 때문에, 정점 연결성은 항상 간선 연결성보다 같거나 작습니다.
 
 Minimum degree는 그래프에 있는 모든 정점의 차수 중에서 가장 작은 값을 갖는 정점의 차수를 의미하는데, 만약 이 정점이 1개밖에 연결되어 있지 않다면, 그 정점을 제거하거나 연결된 간선을 끊으면 네트워크가 끊길 수 있어, 그래프 전체의 연결성이 그것 이상이 될 수 없습니다.
@@ -549,7 +604,7 @@ Minimum degree는 그래프에 있는 모든 정점의 차수 중에서 가장 �
 
 Articulation Points(절단점)이란, 그래프에서 어떤 정점을 제거했을 때 그래프가 더 이상 하나로 연결된 상태가 아니게 된다면, 그 정점을 articulation point 또는 cut vertex라고 합니다. 즉, 그 정점을 지우면 네트워크가 끊어지는 중요한 연결 지점이 되는 노드입니다.
 
-정점과 그 정점에 연결된 간선들까지 함께 제거했을 때, 그래프가 여러 조각으로 나뉘면 !! articulation point !!
+정점과 그 정점에 연결된 간선들까지 함께 제거했을 때, 그래프가 여러 조각으로 나뉘면 !! **articulation point !!**
 
 
 

@@ -2,6 +2,7 @@
 published: true
 layout: single
 title:  "Network : Descriptive Analysis of Network Graph Characteristics (1)"
+categories: Network
 toc: true
 use_math: true
 ---
@@ -20,19 +21,19 @@ use_math: true
 
 **Social Dynamics (사회적 상호작용)** 
 
-: 세 노드로 구성된 삼합 구조(triads)를 통해 특정 관계 패턴을 분석할 수 있습니다.
+세 노드로 구성된 삼합 구조(triads)를 통해 특정 관계 패턴을 분석할 수 있습니다.
 
 **Information or Commodity Flow (정보 또는 상품의 흐름)**
 
-: 그래프 내에서의 경로와 흐름을 모델링하며 분석할 수 있습니다.
+그래프 내에서의 경로와 흐름을 모델링하며 분석할 수 있습니다.
 
 **Importance of System Elements (시스템 구성 요소의 중요성)**
 
-: **노드의 중심성(centrality) 지표**를 통해 각 구성 요소의 **상대적 중요도를 파악**할 수 있습니다.
+**노드의 중심성(centrality) 지표**를 통해 각 구성 요소의 **상대적 중요도를 파악**할 수 있습니다.
 
 **Community Detection** **(커뮤니티 탐지)**
 
-: 그래프를 적절히 분할(partitioning)함으로써, 내부적으로 밀접한 집단을 식별할 수 있습니다.
+그래프를 적절히 분할(partitioning)함으로써, 내부적으로 밀접한 집단을 식별할 수 있습니다.
 
 
 
@@ -93,7 +94,7 @@ degree를 히스토그램으로 나타내면, 총 3개의 그룹으로 나뉩니
 
 
 
-yeast 데이터를 이용하여 확인해봅시다!
+yeast 데이터를 이용하여 확인해봅시다.
 
 ```R
 > data(yeast)
@@ -350,9 +351,13 @@ $$
 
 
 와 같습니다. 자기 자신을 제외한 모든 노드들과의 거리를 합한 후 공식에 대입합니다.
+
+
 $$
 \frac{N_v(7)-1}{2+1+2+1+2+1}=\frac{6}{9}=0.667
 $$
+
+
 
 
 
@@ -363,6 +368,8 @@ $$
 
 
 **Betweenness Centrality**
+
+
 $$
 \sum_{s \ne t \ne v \in V } \frac{\sigma(s, t \mid v)}{\sigma(s, t)} \div {\binom{v-1}{2}} \\ \\
 N_v = |V| \ :\text{the number of vertices}
@@ -379,6 +386,7 @@ $$
 | AG   | 1    |      |      |      |      |      |      |
 
 값을 모두 합해보면, 11이라는 값이 나옵니다. 
+
 
 
 $$
@@ -459,9 +467,12 @@ $$
 | AG   | 0    |      |      |      |      |      |      |
 
 값을 모두 합해보면, 8이라는 값이 나옵니다. 
+
+
 $$
 \frac{8}{15} \approx 0.533
 $$
+
 
 
 Betweenness Centralilty는 0.533의 값을 가집니다.

@@ -2,6 +2,7 @@
 published: true
 layout: single
 title:  "Network : Manipulating Network Data"
+categories: Network
 toc: true
 use_math: true
 ---
@@ -9,8 +10,6 @@ use_math: true
 이 포스팅은 서울시립대학교 통계학과 네트워크자료분석 수업 중 **'Network : Manipulating Network Data'**에 대한 내용을 담고 있습니다.
 
 ---
-
-
 
 
 
@@ -38,6 +37,7 @@ $$
 
 
 Vertices(점, set)는 Node라고도 합니다. Edges는 link라고 합니다.
+
 
 $$
 N_v= |V| : \text{order of the graph} \\
@@ -127,8 +127,6 @@ IGRAPH 7227394 DN-- 3 4 --
 $$
 A_{ij}=1 \ \ \text{if an edge exists from i to j}
 $$
-
-
 
 
 
