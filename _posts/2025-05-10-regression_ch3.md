@@ -2,8 +2,7 @@
 published: true
 layout: single
 title:  "Regression Analysis : Diagnostics and Remedial Measures"
-categories: Regression Analysis
-toc: true
+categories: Regression_Analysis
 use_math: true
 ---
 

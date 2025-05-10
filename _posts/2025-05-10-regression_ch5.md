@@ -2,8 +2,7 @@
 published: true
 layout: single
 title:  "Regression Analysis : Matrix Approach to Simple Linear Regression Analysis"
-categories: Regression Analysis
-toc: true
+categories: Regression_Analysis
 use_math: true
 ---
 

@@ -2,8 +2,7 @@
 published: true
 layout: single
 title:  "Regression Analysis : Linear Regression with One Predictor Variable"
-categories: Regression Analysis
-toc: true
+categories: Regression_Analysis
 use_math: true
 ---
 

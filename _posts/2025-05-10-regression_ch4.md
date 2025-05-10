@@ -2,8 +2,7 @@
 published: true
 layout: single
 title:  "Regression Analysis : Simultaneous Inferences and Other Topics in Regression Analysis"
-categories: Regression Analysis
-toc: true
+categories: Regression_Analysis
 use_math: true
 ---
 
