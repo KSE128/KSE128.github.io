@@ -17,11 +17,11 @@ minimal_mistakes_skin    : "contrast" # "air", "aqua", "contrast", "dark", "dirt
 # Site Settings
 locale                   : "ko-KR"
 rtl                      : # true, false (default) # turns direction of the page into right to left for RTL languages
-title                    : "sang_eunnii"
+title                    : "KSE128"
 title_separator          : "|"
-subtitle                 : "슬기로운 사학년 라잎"
+subtitle                 : # ""
 name                     : "김상은"
-description              : ":)"
+description              : "..."
 url                      : "https://KSE128.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
@@ -31,7 +31,7 @@ masthead_title           : # overrides the website title displayed in the masthe
 breadcrumbs              : true # true, false (default)
 words_per_minute         : 200
 enable_copy_code_button  : # true, false (default)
-copyright                : #"copyright" name, defaults to site.title
+copyright                : "copyright name, defaults to site.title"
 copyright_url            : # "copyright" URL, defaults to site.url
 comments:
   provider               : # false (default), "disqus", "discourse", "facebook", "staticman", "staticman_v2", "utterances", "giscus", "custom"
@@ -115,7 +115,7 @@ analytics:
 author:
   name             : "김상은"
   avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "서울시립대학교 경제학부 학부생입니다."
+  bio              : "서울시립대학교 경제학부 4학년 학부생입니다."
   location         : "서울시립대학교"
   email            :
   links:
