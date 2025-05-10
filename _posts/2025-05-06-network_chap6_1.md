@@ -16,9 +16,10 @@ use_math: true
 
 #### Introduction
 
-##### Back ground : Exponential Family Models
+##### Background : Exponential Family Models
 
 확률분포를 다음과 같은 형태로 쓸 경우, Exponential Family에 속한다고 말합니다.
+
 
 
 $$
@@ -32,12 +33,15 @@ g(z) : \text{a vector of sufficient statistics} \\
 $$
 
 
+
 모수 벡터의 경우 분포의 성질을 결정하는 값들을 의미합니다. 충분통계량 벡터의 경우 데이터 z에서 중요한 정보만 요약한 함수를 나타냅니다. 또, 로그-정규화 상수의 경우 확률 분포가 전체에서 1이 되도록 맞춰주는 역할을 합니다. 
+
 
 
 $$
 \theta^T g(z) : \text{inner product term, normalize}
 $$
+
 
 
 위의 부분은 데이터와 모수의 상호작용을 나타냅니다. 어떤 데이터가 모수에서 얼마나 영향을 받는지 결정하는 부분이기도 합니다. g(z)는 데이터에서 중요한 정보를 요약한 벡터이고, 모수는 요약 통계량에 각각 얼마나 '무게'를 줄지 결정하는 부분입니다.
@@ -67,13 +71,16 @@ connections to statistical inference : 통계 추론과의 연결성 → MLE, �
 General Formulation
 
 
+
 $$
 G=(V,E) \text{ with vertex set V and edge set E} \\
 Y_{ij}=Y_{ji} : \text{a binary random variable with presence(1), absence(0)}
 $$
 
 
+
 V는 vertex 집합, E는 edge 집합이 됩니다. Y 부분의 경우 vertex i와 j 사이에 edge이 있으면 1, 없으면 0인 이진 랜덤 변수가 되고, 이를 모아 만든 것이 adjacency matrix Y가 됩니다. y는 Y의 특정한 실현값으로, 관찰된 네트워크의 모습이라고 할 수 있습니다.
+
 
 
 $$
@@ -88,6 +95,7 @@ $$
 $$
 
 
+
 **Configuration H**은 네트워크 내의 작은 subgraph 패턴 (ex. edge, triangle, star)으로, 전체 그래프 내에서 주목할만한 local structure입니다. 각 configuration H는 우리가 측정하거나 모델링하려고 하는 특정 유형의 구조적 특징에 대응합니다.
 
 
@@ -96,11 +104,14 @@ $$
 
 
 
-**Configuration Statistic : g_(y)**
+**Configuration Statistic**
+
+
 $$
 \text{configuration statistic : }g_H(y) \\
 g_H(y) = \prod_{(i,j) \in H} y_{ij}
 $$
+
 
 $$
 g_H(y) =
@@ -111,16 +122,23 @@ g_H(y) =
 $$
 
 
+
 예를 들어, triangle configuration을 측정할 때,
+
+
 $$
 g_H(y)=y_{ij}y_{jk}y_{ki}
 $$
+
+
 를 이용하여 모두 연결되어 있을 경우, 1 하나라도 연결되어있지 않은 경우 0으로 측정합니다. 
+
 
 
 $$
 \theta_H : \text{the parameter associated with configuration}\ H
 $$
+
 
 
 이 모수는 configuration H가 전체 네트워크 구조에 미치는 영향을 나타냅니다. 

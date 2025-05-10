@@ -530,6 +530,8 @@ r_a =
 \frac{ \sum_i f_{ii} - \sum_i f_{i+} f_{+i} }
      { 1 - \sum_i f_{i+} f_{+i} }
 $$
+
+
 <img src="{{site.url}}\images\2025-04-19-network_chap4_3\assortativity_coef.PNG" alt="assortativity_coef" style="zoom: 67%;" />
 
 
@@ -614,6 +616,8 @@ r = \frac{\sum_{x, y} x y \left( f_{xy} - f_{x+} f_{+y} \right)}{\sigma_x \sigma
 f_{xy} : \text{fraction of edges connecting values x and y} \\
 f_{x+},f_{+y} : \text{marginal sums over rows/columns}
 $$
+
+
 <img src="{{site.url}}\images\2025-04-19-network_chap4_3\pearson.PNG" alt="pearson" style="zoom:67%;" />
 
 이것은 피어슨 상관계수 (Pearson correlataion coefficient)의 일반적 형태입니다.
@@ -626,3 +630,4 @@ $$
 ```
 
 가장 많이 쓰이는 특수한 경우는 degree assortativity로 yeast 단백질 상호작용 네트워크에서 degree와 degree 간 연결 상관관계를 구합니다. 상관계수를 확인해보면, 양수이므로 degree가 높은 단백질은 다른 고도 연결된 단백질과 연결되는 경향이 있습니다. biological network에서 흔히 나타나는 특징입니다.
+
