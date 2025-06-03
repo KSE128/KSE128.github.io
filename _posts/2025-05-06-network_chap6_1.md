@@ -2,6 +2,7 @@
 published: true
 layout: single
 title:  "Network : Statistical Models for Network Graphs (1)"
+categories: Network
 toc: true
 use_math: true
 ---
