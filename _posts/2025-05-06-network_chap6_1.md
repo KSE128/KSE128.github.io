@@ -106,7 +106,6 @@ $$
 
 
 **Configuration Statistic**
-
 $$
 \text{configuration statistic : }g_H(y) \\
 g_H(y) = \prod_{(i,j) \in H} y_{ij}
@@ -474,14 +473,494 @@ $$
 
 보통의 경우 4-star 이상은 무시합니다. 이는 계산이 복잡해질 수 있고 과적합(overfitting)의 위험성이 존재하기 때문입니다.
 
+Higher-Order를 적용하는 접근은 Model degeneracy를 일으킬 수 있습니다. 이는 모델이 비현실적인 그래프에 확률을 몰아주는 현상으로 예를 들어 완전히 연결된 그래프 (complete) 또는 아예 비어 있는 그래프 (empty) 상태를 말하는데 이런 경우 실제 네트워크와 전혀 다른 극단적인 결과만 생성하게 됩니다.
+
+그렇다면, 더 높은 차수의 star 패턴을 제대로 반영하는 방법은 무엇이 있을까요?
+
+
+
+##### Solution of Model Degeneracy
+
+**Alternating k-Star Statistic (AKS)**
+
+여러 개의 k-star를 하나의 단일 통계량으로 요약하되, 그 영향력을 점점 줄이고, 부호를 번갈아 바꿔서 안정적으로 반영하자는 내용입니다.
+
+
+$$
+\text{AKS}_\lambda(y) = \sum_{k=2}^{N_v - 1} \frac{(-1)^k S_k(y)} {\lambda^{k-2}} , \quad \lambda \geq 1
+$$
+
+
+이 수식은 여러 고차 star 효과를 균형 있게 반영하면서, 높은 차수에 너무 큰 영향력을 주지 않도록 제어해줍니다.
+
+k차수가 올라가면서,
+$$
+\theta_k
+$$
+에 해당하는 절댓값은 줄어들게 됩니다.
+
+그 이유를 차근차근 살펴보면, 
+$$
+\lambda^{k-2}
+$$
+는 k가 커질수록 점점 커집니다.  λ가 1 이상의 값을 가지기 때문입니다. 
+
+따라서,
+$$
+\frac{S_k(y)}{\lambda^{k-2}}
+$$
+의 값은 점점 작아집니다. 즉, 고차 star일수록 그 항의 기여도가 줄어들게 됩니다.
+
+
+
+각 star의 계수를 각각 추정하지 않고, 대신 아래의 규칙을 따르도록 미리 모양을 설정한 수식입니다.
+
+
+$$
+\theta_k \propto (-1)^k \lambda^{-(k-2)},\quad \text{for all } k \geq 2
+$$
+
+
+이 수식에서는 계수를 따로 따로 추정하지 않고, 규칙을 부여합니다. 이는 모델이 너무 많은 자유도를 갖지 않도록 제약을 주는 **parametric constraint**라고 합니다. 
+
+또, 
+$$
+\lambda \geq 1
+$$
+이므로, 
+$$
+\lambda^{-(k-2)}
+$$
+는 k가 커질수록 작아지게 됩니다. 즉, 고차 star의 기여도가 줄어들면서 모델 안정성이 높아지게 됩니다.
+
+
+$$
+(-1)^k
+$$
+는 작은 star와 큰 star의 영향력을 균형 있게 조절하면서 너무 촘촘하거나 너무 희소한 그래프에 확률이 쏠리지 않도록 도와줍니다. 이는 과적합(overfitting)을 방지합니다.
+
+
+
+**Equivalent Alternative: Geometrically Weighted Degree (GWD)**
+
+다른 대안은 노드의 degree 분포에 기반한 통계량입니다. 
+$$
+\mathrm{GWD}_\gamma(y) = \sum_{d=0}^{N_v - 1} e^{-\gamma d} \cdot N_d(y)
+$$
+
+| 항목    | 의미                                                      |
+| ------- | --------------------------------------------------------- |
+| N_d(y)  | **degree가 d**인 노드의 개수                              |
+| γ       | **감쇠 계수(decay rate)** – degree가 클수록 가중치 작아짐 |
+| e^{−γd} | degree d에 대한 가중치. **지수적으로 줄어듦**             |
+
+
+
+감쇠율을 정의하면, 
+
+
+
+$$
+\gamma = \log\left( \frac{\lambda - 1}{\lambda} \right),\quad \lambda \geq 1
+$$
+
+
+
+이 정의는 위의 AKS에서 사용된 λ와 동일하게 조절되도록 설계된 것으로 λ가 클수록 γ는 작아지고 가중치 감소가 느려집니다. 
+
+이는 고차 star들을 degree 분포를 통해 간접적으로 요약해서 계산합니다. degree가 높을수록 해당 노드가 여러 star 구성에 관여할 가능성이 높기 때문에, degree 기반 요약(GWD)도 star 기반 요약(AKS)과 매우 유사한 정보를 담고 있습니다.
+
+
+
+Alternating k-Star (AKS)도 결국 degree 분포로 표현할 수 있습니다.
+
+먼저 k-star 개수를 degree로 표현합니다.
+
+
+
+$$
+S_k(y) = \sum_{d=k}^{N_v - 1} \binom{d}{k} N_d(y)
+$$
+
+$$
+N_d(y)=\text{the number of nodes of degree} \ d
+$$
+
+
+
+degree가 d인 노드는 총 (d개 중 k개를 뽑은 경우의 수) 개의 k-star를 만들 수 있고, 그런 노드가 N개 있으니, 전체 k-star 개수를 쓸 수 있게 됩니다. 즉, star 개수는 degree 분포를 기반으로 계산이 가능하게 됩니다.
+
+그렇다면, AKS를 degree 기반으로 다시 표현할 수 있게 됩니다.
+
+
+
+$$
+\text{AKS}_\lambda(y) = \sum_{d=2}^{N_v-1} N_d(y)\sum_{k=2}^{d} (-1)^k \frac{\binom{d}{k}} {\lambda^{k-2}}
+$$
+
+
+
+각 degree d를 기준으로, 해당 degree가 만들 수 있는 모든 k-star에 대해 alternating weight를 곱해서 더합니다. 
+
+즉, AKS는 degree 분포를 기반으로 한 가중 다항식 합 (weighted polynomial sum)입니다.
+
+AKS는 여러 차수의 star를 모두 고려하되, 직접적으로 star의 수로 표현하지 않고 더 간접적인 정보인 degree 분포를 통해 표현할 수 있습니다.
+
+
+$$
+\mathrm{GWD}_\gamma(y) = \sum_{d=0}^{N_v - 1} e^{-\gamma d} \cdot N_d(y)
+$$
+
+
+와 비교하면,
+
+
+$$
+w(d;\lambda)=\sum_{k=2}^{d} (-1)^k \frac{\binom{d}{k}} {\lambda^{k-2}}\ \propto \ e^{-\gamma d} \ \ \text{with} \ \ \gamma=\log\left(\frac{\lambda-1}{\lambda}\right)
+$$
+
+
+의 관계를 나타낼 수 있습니다.
+
+이 함수는 degree d에 대해 적용되는 감쇠(weight decay) 함수입니다.  λ가 클수록 γ는 작아지고 감쇠가 느려집니다.  
+
+이 weight 함수 
+$$
+w(d;\lambda)
+$$
+는 AKS에서 쓰이는 복잡한 **이항계수 기반 가중합**을 **매우 근사적으로 표현**할 수 있습니다.
+
+
+$$
+\sum_{k=0}^{d} \binom{d}{k}(-1)^kx^k=(1-x)^d
+$$
+
+
+여기서 
+$$
+x=\frac{1}{\lambda}
+$$
+와 같은 형태를 넣으면 AKS에서 쓰이는 가중치와 거의 비슷한 형태가 됩니다.
+
+
+
+결국엔, AKS에서의 weight 구조가 **지수 함수 기반 감쇠 함수**와 유사하다는 점을 보여주며, **AKS와 GWD의 이론적 유사성**을 수학적으로 정당화합니다.
+
+
+
+**Triangle : Alternating k-Triangle Statistic (ATS)**
+
+
+$$
+AKT_\lambda(y)=3T_1+\sum_{k=2}^{N_v-2}\frac{(-1)^{k+1}T_k(y)}{\lambda^{k-1}}, \\
+T_k \text{ is the number of triangles (sets of k triangles sharing a base)}
+$$
+T_k는 동일한 엣지를 공유하는 k개의 삼각형 묶음을 이야기합니다. 즉, 한 엣지 주변에 삼각형이 여러 개 겹치는 구조를 의미합니다.
+
+AKT 통계량을 쓰면, 여러 triangle 구조를 하나의 요약된 지표로 처리하게 됩니다. 감쇠와 alternating sign으로 복잡한 클러스터 구조를 완화시켜 더 안정적이고 현실적인 클러스터링 모델링이 가능하게 됩니다.
+
+
+
+**+ GWESP (Geometrically Weighted Edgewise Shared Partners)**
+
+ESP는 두 노드가 엣지로 연결되어 있을 때, 그들이 공유하는 친구의 수로 GWESP는 이런 shared partner 수에 지수적 감쇠(weight)를 적용해서 삼각형 경향성을 포착하는 통계량입니다. 고차 삼각형에 덜 민감하게 하여 모델의 안정성과 해석 가능성을 높이는 방식입니다.
+
+
+
+##### Adding Vertex Attributes
+
+ERGM은 네트워크 구조뿐만 아니라, 노드 간의 속성 차이(성별, 부서, 연차 등)가 연결에 영향을 미칠 수 있다는 사실도 함께 모델링할 수 있습니다.
+
+
+$$
+g(y, x) = \sum_{1 \leq i < j \leq N_v} y_{ij} \cdot h(x_i, x_j)
+$$
+
+
+이 통계량은 "속성 정보가 연결에 미치는 총 효과"를 정리한 형태입니다. y_i,j는 노드 i와 j 사이에 있지가 있는지의 여부를 나타냅니다. 이 통계량은 속성 정보가 연결에 미치는 총 효과를 나타냅니다.
+
+
+$$
+h(x_i, x_j)
+$$
+에는 Main effect와 Second-order effect (Homophily effect), 두 가지 효과가 있습니다. 
+
+먼저 Main Effect는 다음과 같은 형태를 나타냅니다.
+
+
+$$
+h(x_i,x_j)=x_i+x_j
+$$
+
+
+이는 연결된 노드들의 속성 수준의 합을 나타냅니다. 또, 속성 수준 자체가 얼마나 연결에 기여하느냐를 측정하는 도구가 됩니다.
+
+
+
+두번째는 Homophily effect로 다음과 같은 형태를 나타냅니다.
+
+
+$$
+h(x_i,x_j)=I\{x_i=x_j\}
+$$
+
+
+이 형태의 경우 두 노드의 속성이 같으면 1, 다르면 0으로 동질성을 모델링합니다.
+
+
+
+첫번째 (Main effect)는 "속성 자체가 영향을 주는지"를 모델링하고, 두번째(homophily effect)는 "속성이 같은 노드들이 더 잘 연결되는지"를 포착합니다.
+
+
+
+##### Unified ERGM Formulation
+
+ERGM의 구조적 요인과 속성 정보(covariates)를 하나의 수식으로 표현하면 다음과 같습니다.
+
+
+$$
+P_{\theta, \beta}(Y = y \mid X = x) = \frac{1}{\kappa(\theta, \beta)} \exp\left\{ \theta^T g(y) + \beta^T h(y, x) \right\}
+$$
+
+
+이 수식은 구조적 특성과 노드 속성을 동시에 반영한 종합적인 네트워크 생성 모델로 네트워크 구조와 속성 효과의 두 요소가 같이 포함되어 있습니다.
+
+
+
+##### Expanded Example Form
+
+
+$$
+P_{\theta, \beta}(Y = y \mid X = x) =  \\\frac{1}{\kappa(\theta, \beta)} \exp \Bigg\{ 
+    \theta_1 S_1(y) + 
+    \theta_2 \mathrm{AKT}_\lambda(y) +
+    \beta_1 \sum_{i < j} y_{ij} I\{x_i = x_j\} + 
+    \beta_2 \sum_{i < j} y_{ij} (x_i + x_j)
+\Bigg\}
+$$
+
+
+이 구성 요소에서는 S(y)는 전체 엣지 수를 나타냅니다. AKT는 Alternating k-Triangle 통계량으로 삼각형 구조를 반영해줍니다. 노드 속성이 같을수록 연결될 확률이 높다는 동질성도 모델링되어 있고, 속성 값의 수준이 연결 확률에 영향을 미치는 main effect도 함께 모델링 되어 있습니다.
+
+exp() 부분의 첫번째와 두번째 항에서는 그래프 구조를 포착하는 항으로 이루어져있고, 세번째와 네번째 항에서는 구조와 상관없이 vertex의 특성을 추가한 항으로 이루어져있습니다.
+
+```R
+> lazega.ergm <- formula(lazega.s ˜ edges +
+     gwesp(log(3), fixed=TRUE) +
+     nodemain("Seniority") +
+     nodemain("Practice") +
+     match("Practice") +
+     match("Gender") +
+     match("Office"))
+```
+
+`nodemain("Seniority")`와 `nodemain("Practice")`의 경우 Main effect로 포착되고, 
+
+`match("Practice")`, `match("Gender")`, `match("Office")`는 Homophily effect로 포착됩니다.
 
 
 
 
 
+##### Model fitting
+
+ERGM은 exponential family에 속하는 모델로 MLE를 사용할 수 있는데, ERGM의 경우 네트워크 전체 구조를 고려해야하고, 가능한 모든 그래프에 대해 확률을 합산하는 정규화 상수 계산이 필요해서 일반적인 모델보다는 복잡하다는 단점이 있습니다.  
+
+간단하게 수학적으로 나타내면, 
+
+
+$$
+P_{\theta}(Y = y) = \frac{1}{\kappa(\theta)} \exp\left( \theta^T g(y) \right)
+$$
+
+
+와 같은 형태로 exponential family의 전형적인 구조로 나타납니다.
+
+
+$$
+\ell(\theta) = \theta^T g(y) - \psi(\theta) \quad \text{where} \quad \psi(\theta) = \log \kappa(\theta)
+$$
+MLE (최대우도추정)은 로그우도함수에서 theta를 최대화하는 값을 찾는 것인데, 계산하는데 복잡한 과정이 필요합니다. 
+
+그래서 우리는 R 패키지를 이용하여 Model fitting을 진행하게 됩니다.
+
+
+
+```R
+> A <- get.adjacency(lazega)
+> v.attrs <- as_data_frame(lazega, what = "vertices")
+> 
+> lazega.s <- as.network(as.matrix(A), directed = FALSE)
+> 
+> set.vertex.attribute(lazega.s, "Office", v.attrs$Office)
+> set.vertex.attribute(lazega.s, "Practice", v.attrs$Practice)
+> set.vertex.attribute(lazega.s, "Gender", v.attrs$Gender)
+> set.vertex.attribute(lazega.s, "Seniority", v.attrs$Seniority)
+> 
+> lazega.ergm <- formula(lazega.s ~ 
++                          edges +
++                          gwesp(log(3), fixed = TRUE) +
++                          nodemain("Seniority") +
++                          nodemain("Practice") +
++                          match("Practice") +
++                          match("Gender") +
++                          match("Office")
++ )
+> 
+> lazega.ergm.fit <- ergm(lazega.ergm)
+> anova(lazega.ergm.fit)
+Analysis of Deviance Table
+
+Model 1: lazega.s ~ edges + gwesp(log(3), fixed = TRUE) + nodemain("Seniority") + 
+    nodemain("Practice") + match("Practice") + match("Gender") + 
+    match("Office")
+         Df Deviance Resid. Df Resid. Dev Pr(>|Chisq|)    
+NULL                       630     873.37                 
+Model 1:  7   414.24       623     459.13    < 2.2e-16 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+```
+
+
+
+이 예시는 Lazega 변호사 네트워크 데이터셋을 기반으로 ERGM을 적합하고 이 모델에 대해 ANOVA 분석을 수행하여 유의미성을 평가하는 분석 코드입니다.
+
+anova(lazega.ergm.fit) 결과 코드를 보면, NULL에 비해 Model 1의 Residual Deviance (잔차 이탈도)가 급격히 줄어든 경우, 모델이 데이터에 대해 설명을 잘한다는 의미를 가집니다. 
+
+
+
+ANOVA 분석처럼 ERGM과 GLM도 비슷한 구조를 공유합니다.
+
+```R
+> summary(lazega.ergm.fit)
+Call:
+ergm(formula = lazega.ergm)
+
+Monte Carlo Maximum Likelihood Results:
+
+                              Estimate Std. Error MCMC % z value Pr(>|z|)    
+edges                        -6.994522   0.682010      0 -10.256  < 1e-04 ***
+gwesp.fixed.1.09861228866811  0.591354   0.087768      0   6.738  < 1e-04 ***
+nodecov.Seniority             0.024714   0.006305      0   3.919  < 1e-04 ***
+nodecov.Practice              0.395820   0.108429      0   3.651 0.000262 ***
+nodematch.Practice            0.767632   0.196495      0   3.907  < 1e-04 ***
+nodematch.Gender              0.725628   0.250477      0   2.897 0.003768 ** 
+nodematch.Office              1.157722   0.198807      0   5.823  < 1e-04 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+     Null Deviance: 873.4  on 630  degrees of freedom
+ Residual Deviance: 459.1  on 623  degrees of freedom
+ 
+AIC: 473.1  BIC: 504.2  (Smaller is better. MC Std. Err. = 0.3235)
+```
+
+
+
+이 결과는 lazega 데이터를 ERGM 모델에 대해 학습하고 요약한 결과인데, `nodecov.Seniority`와 `nodecov.Practice`는 main effect에 해당하는 항목입니다. homophily effect는 `nodematch.Practice`와 `nodematch.Gender`, `nodematch.Office`에 해당합니다.
+
+homophily effect 에서는 비슷한 속성끼리 연결되는 경우를 포착하는 것인데, `nodematch.Practice`에서는 기업과 기업, 송사와 송사 형태로 matching될 경우 포착하는 효과입니다.
+
+
+
+그렇다면, ERGM의 계수는 어떻게 해석할 수 있는지 확인해봅시다!
+
+
+$$
+\log \left( 
+\frac{
+P_{\theta}(Y_{ij} = 0 \mid Y_{(-ij)} = y_{(-ij)})
+}{
+P_{\theta}(Y_{ij} = 1 \mid Y_{(-ij)} = y_{(-ij)})
+}
+\right)
+= \theta^T \Delta_{ij}(y) \\
+\text{where} \ \ \Delta_{ij}(y) \ \ \text{the change statistic for the edge}\ ij \\
+\Delta_{ij}(y)=g(y^+)-g(y^-)
+$$
+
+
+엣지 ij가 생길 확률은 나머지 네트워크가 고정되어 있을 때, ij 엣지를 추가했을 때 모델 통계량이 얼마나 변하느냐에 따라 결정됩니다.
+
+
+
+그러면 우리가 도출한 R코드를 통해 어떻게 해석할 수 있는지 알아봅시다.
+
+ERGM 계수를 해석하는 방법으로는 log-odds → odds ratio 변환을 통해 의미를 부여하는 방식인데, 
+
+
+$$
+\text{Odds Ratio = exp}(\theta)
+$$
+
+
+을 계산해야 실제 연결 확률 변화의 효과를 이해할 수 있게 됩니다.
+
+
+
+먼저 Practice 계수를 해석해봅시다.
+
+
+$$
+\log \left( 
+\frac{
+P_{\theta}(Y_{ij} = 0 \mid Y_{(-ij)} = y_{(-ij)})
+}{
+P_{\theta}(Y_{ij} = 1 \mid Y_{(-ij)} = y_{(-ij)})
+}
+\right)_{\text{Practice}}
+= \theta_{\text{Practice}} \cdot \left( I_{\{x_i = \text{corporate}\}} + I_{\{x_j = \text{corporate}\}} \right) \\ \\
+\text{Practice : the type of vertex attribute} 
+$$
+
+$$
+\theta_{\text{practice}}=0.3958 \\
+\text{odds ratio = exp(0.3958)} \approx1.485
+$$
+
+
+practice에서 1에 해당하는 corporate에 속한 사람은 0에 해당하는 litigation에 속한 사람보다 연결될 odds가 약 1.485배, 약 48.5% 더 높은 협업의 가능성이 존재한다고 해석할 수 있습니다.
+
+
+
+**삼각형 효과 (transitivity)**도 포착할 수 있는데, 이는 `gwesp.fixed.1.09861228866811` 를 통해서 계수를 추정하고, 유의미한지 확인할 수 있습니다. transitivity가 연결을 촉진하는 방향은 0.5876의 계수를 가지고 있어 **양의 효과**를 포착합니다. 또, p-value를 통해 0.1%의 유의수준에서 유의한 결과를 나타낸다는 것을 알 수 있습니다. 즉, 이 모델에서 transitivity는 실제 네트워크 형성에 중요한 구조적 유인이라는 것을 확인할 수 있습니다.
+
+
+$$
+y_{ij} \, h(x_i, x_j) = y_{ij} \left( x_i + x_j \right)
+$$
+
+$$
+\Delta_{ij} = \left( x_i + x_j \right)
+$$
+
+corporate practice(기업 법무 직군)에 대한 계수 0.3954를 오즈 비(odds ratio)로 변환하면 
+$$
+\exp⁡(0.3954)\approx1.485
+$$
+이는 litigation(소송) 직군에 비해 약 48.5% 더 높은 협업 확률을 나타냅니다.
+
+또한, 삼각형과 관련된 항목 (transitivity)도 속성 기반 동질성(homophily)을 고려한 이후에도 여전히 유의미하게 양의 영향을 주는 것으로 나타났습니다. → 이는 사회적 과정 속에 내재된 구조적 연결 경향성을 보여줍니다.
+
+또한, ERGM에서 나타나는 p-value는 전통적인 통계검정에서의 p-value와 달라 엄밀한 확률 해석을 하기 보다는 해석을 돕는 참고 지표입니다.
+
+
+
+```R
+> gof_lazega.ergm <- gof(lazega.ergm.fit)
+> par(mfrow=c(2,2))
+> plot(gof_lazega.ergm)
+```
+
+
+
+<img src="{{site.url}}\images\2025-05-06-network_chap6_1\gof_ergm.PNG" alt="gof_ergm" style="zoom: 50%;" />
+
+
+
+Goodness of fit의 결과를 통해 이 ERGM 모델은 현실 네트워크의 구조적 특성과 속성 기반 패턴을 잘 설명하고 있다는 것을 확인할 수 있습니다.
 
 
 
 
 
-여기에 ERGM 다 적기
