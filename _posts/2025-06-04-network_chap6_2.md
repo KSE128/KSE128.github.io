@@ -100,7 +100,7 @@ L(y)는 y에서 블록 q와 r를 연결하는 엣지의 개수입니다.
 
 ##### Network Block Models : Stochastic Block Model (SBM)
 
-앞에서 다룬 Network Block Models는 현실에서는 블록의 소속 정보를 알기 어렵기 때문에 많이 사용하지 않습니다. 
+앞에서 다룬 Network Block Models는 현실에서는 **블록의 소속 정보를 알기 어렵기 때문**에 많이 사용하지 않습니다. 
 
 그래서 Stochastic Block Model을 사용합니다.
 
