@@ -1,13 +1,13 @@
 ---
 published: true
 layout: single
-title:  "Network : Descriptive Analysis of Network Graph Characteristics (3)"
+title:  "Network : Graph Partitioning & Assortativity and Mixing"
 categories: Network
 toc: true
 use_math: true
 ---
 
-이 포스팅은 서울시립대학교 통계학과 네트워크자료분석 수업 중 **'Network : Descriptive Analysis of Network Graph Characteristics' 의 Part 3**에 대한 내용을 담고 있습니다.
+이 포스팅은 서울시립대학교 통계학과 네트워크자료분석 수업 중 **'Network : Graph Partitioning & Assortativity and Mixing'**에 대한 내용을 담고 있습니다.
 
 ---
 
@@ -372,7 +372,7 @@ $$
 $$
 \lambda_2 \approx0 \rightarrow x_2= \text{Fiedler Vector}
 $$
- 
+
 
 Fielder Value가 작다는건 그래프를 자연스럽게 잘라낼 수 있는 지점이 있다는 의미를 가집니다.
 

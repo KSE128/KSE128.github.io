@@ -1,13 +1,13 @@
 ---
 published: true
 layout: single
-title:  "Network : Descriptive Analysis of Network Graph Characteristics (1)"
+title:  "Network : Vertex and Edge Characteristics"
 categories: Network
 toc: true
 use_math: true
 ---
 
-이 포스팅은 서울시립대학교 통계학과 네트워크자료분석 수업 중 **'Network : Descriptive Analysis of Network Graph Characteristics' 의 Part 1**에 대한 내용을 담고 있습니다.
+이 포스팅은 서울시립대학교 통계학과 네트워크자료분석 수업 중 **'Network : Vertex and Edge Characteristics**에 대한 내용을 담고 있습니다.
 
 ---
 

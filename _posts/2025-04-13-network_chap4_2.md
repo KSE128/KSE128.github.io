@@ -1,13 +1,13 @@
 ---
 published: true
 layout: single
-title:  "Network : Descriptive Analysis of Network Graph Characteristics (2)"
+title:  "Network : Characterizing Network Cohesion"
 categories: Network
 toc: true
 use_math: true
 ---
 
-이 포스팅은 서울시립대학교 통계학과 네트워크자료분석 수업 중 **'Network : Descriptive Analysis of Network Graph Characteristics' 의 Part 2**에 대한 내용을 담고 있습니다.
+이 포스팅은 서울시립대학교 통계학과 네트워크자료분석 수업 중 **'Network : Characterizing Network Cohesion**에 대한 내용을 담고 있습니다.
 
 ---
 
@@ -388,7 +388,7 @@ $$
 $$
 cl(v)= \frac{\tau_{\Delta}(v)}{\tau_3(v)}
 $$
- 
+
 
 분자는 실제 삼각형 수를 의미하고, 분모는 가능한 삼각형의 수를 의미합니다. 즉, 이웃 중 두 명이 연결될 수 있는 경우의 수를 의미합니다.
 
