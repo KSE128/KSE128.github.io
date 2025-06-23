@@ -22,3 +22,10 @@ use_math: true
 
 ![p6]({{site.url}}\images\2025-05-10-regression_ch5\p6.jpg)
 
+![p7]({{site.url}}\images\2025-05-10-regression_ch5\p7.png)
+
+![p8]({{site.url}}\images\2025-05-10-regression_ch5\p8.png)
+
+![p9]({{site.url}}\images\2025-05-10-regression_ch5\p9.png)
+
+![p10]({{site.url}}\images\2025-05-10-regression_ch5\p10.png)
