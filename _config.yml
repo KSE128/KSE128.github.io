@@ -271,11 +271,11 @@ jekyll-archives:
     - categories
     - tags
   layouts:
-    category: archive-taxonomy
-    tag: archive-taxonomy
+    categories: archive-taxonomy
+    tags: archive-taxonomy
   permalinks:
-    category: /categories/:name/
-    tag: /tags/:name/
+    categories: /categories/:name/
+    tags: /tags/:name/
 
 
 # HTML Compression
